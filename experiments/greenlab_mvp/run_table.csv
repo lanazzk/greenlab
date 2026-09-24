@@ -1,0 +1,3 @@
+__run_id,__done,model,benchmark,seed,package_energy,dram_energy,gpu_energy,runtime,gpu_memory,ram
+run_0_repetition_0,DONE,llama3.2:3b-instruct-fp16,mmlu_pro,101,-261592.643,0,2689.428,12.166,8225,4813.535
+run_1_repetition_0,DONE,llama3.2:3b-instruct-fp16,mmlu_pro,202,506.337,0,2354.047,10.976,8225,4884.488

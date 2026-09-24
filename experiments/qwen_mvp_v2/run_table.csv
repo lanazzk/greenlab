@@ -1,0 +1,5 @@
+__run_id,__done,model,benchmark,seed,package_energy,gpu_energy,runtime,gpu_memory,ram
+run_0_repetition_0,DONE,qwen2.5:3b-instruct-fp16,mmlu_pro,101,600.199,2734.232,12.796,7255,5010.391
+run_1_repetition_0,DONE,qwen2.5:3b-instruct-fp16,mmlu_pro,202,587.836,2711.78,12.798,7259,5042.199
+run_2_repetition_0,DONE,qwen2.5:3b-instruct-q4_K_M,mmlu_pro,101,374.524,1342.906,7.808,3251,5027.176
+run_3_repetition_0,DONE,qwen2.5:3b-instruct-q4_K_M,mmlu_pro,202,352.021,1227.176,7.407,3255,5048.473
