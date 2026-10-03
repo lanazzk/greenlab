@@ -24,7 +24,8 @@ experiments, and calculating final results.
 ## Results
 
 Raw measurements and experiment progress are stored in:
+`experiments/llm_quantization_main_360/`
 
-`experiments/llm_quantization_main_480_max1024/`
+To generate `result.csv`, run:
 
-The scoring script creates `result.csv` in that directory.
+    python3 benchmark_scoring.py experiments/llm_quantization_main_360
