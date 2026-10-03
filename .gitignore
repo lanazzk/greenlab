@@ -4,3 +4,8 @@ __pycache__/
 
 # Local runtime artifacts
 *.log
+
+.venv/
+logs/
+results/
+experiments/
