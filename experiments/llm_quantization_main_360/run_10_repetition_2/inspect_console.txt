@@ -1,0 +1,34 @@
+Loading dataset TIGER-Lab/MMLU-Pro from Hugging Face...
+[09/27/26 00:05:18] WARNING  Warning: You are sending               _http.py:993
+                             unauthenticated requests to the HF                 
+                             Hub. Please set a HF_TOKEN to enable               
+                             higher rate limits and faster                      
+                             downloads.                                         
+[09/27/26 00:05:19] WARNING  Using the latest cached version of the  load.py:835
+                             dataset since TIGER-Lab/MMLU-Pro                   
+                             couldn't be found on the Hugging Face              
+                             Hub                                                
+                    WARNING  Found the latest cached dataset         cache.py:95
+                             configuration 'default' at                         
+                             /home/gl_team5/.cache/huggingface/datas            
+                             ets/TIGER-Lab___mmlu-pro/default/0.0.0/            
+                             527feea0afed1de15a8c115abf7be4c91212331            
+                             5 (last modified on Thu Sep 24 18:48:08            
+                             2026).                                             
+╭──────────────────────────────────────────────────────────────────────────────╮
+│mmlu_pro (100 samples): ollama/qwen2.5:7b-instruct-fp16                       │
+╰──────────────────────────────────────────────────────────────────────────────╯
+max_retries: 0, max_connections: 1, max_tokens: 1024, temperature: 0.0,         
+sample_shuffle: 42, fewshot: 0, shuffle: False, dataset: TIGER-Lab/MMLU-Pro     
+                                                                                
+total time:                           0:12:37                                   
+ollama/qwen2.5:7b-instruct-fp16       69,621 tokens [I: 25,290, O: 44,331]      
+                                                                                
+choice                                                                          
+accuracy  0.520                                                                 
+stderr    0.050                                                                 
+                                                                                
+Log:                                                                            
+experiments/llm_quantization_main_360/run_10_repetition_2/inspect_logs/2026-09-2
+6T22-05-19-00-00_mmlu-pro_ZDhVuAMyR5GXH3CcSqsEr8.eval                           
+                                                                                

@@ -1,0 +1,12 @@
+{
+  "run_id": "run_1_repetition_9",
+  "model": "gemma2:9b-instruct-q4_K_M",
+  "benchmark": "mmlu_pro",
+  "warmup_started_at": "2026-09-27T12:21:01.170206+00:00",
+  "warmup_time_s": 1.458,
+  "measurement_started_at": "2026-09-27T12:21:02.628054+00:00",
+  "measurement_finished_at": "2026-09-27T12:24:43.632387+00:00",
+  "cooldown_started_at": "2026-09-27T12:24:43.708130+00:00",
+  "cooldown_time_s": 120.0,
+  "cooldown_finished_at": "2026-09-27T12:26:43.708338+00:00"
+}

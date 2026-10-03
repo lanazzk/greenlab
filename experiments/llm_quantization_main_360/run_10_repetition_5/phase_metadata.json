@@ -1,0 +1,12 @@
+{
+  "run_id": "run_10_repetition_5",
+  "model": "qwen2.5:7b-instruct-fp16",
+  "benchmark": "mmlu_pro",
+  "warmup_started_at": "2026-09-26T19:46:54.036891+00:00",
+  "warmup_time_s": 1.935,
+  "measurement_started_at": "2026-09-26T19:46:55.971506+00:00",
+  "measurement_finished_at": "2026-09-26T19:59:38.140260+00:00",
+  "cooldown_started_at": "2026-09-26T19:59:38.266724+00:00",
+  "cooldown_time_s": 120.0,
+  "cooldown_finished_at": "2026-09-26T20:01:38.266892+00:00"
+}

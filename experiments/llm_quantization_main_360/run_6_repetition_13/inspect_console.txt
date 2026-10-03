@@ -1,0 +1,23 @@
+Loading dataset cais/mmlu from Hugging Face...
+[09/27/26 16:59:08] WARNING  Warning: You are sending               _http.py:993
+                             unauthenticated requests to the HF                 
+                             Hub. Please set a HF_TOKEN to enable               
+                             higher rate limits and faster                      
+                             downloads.                                         
+╭──────────────────────────────────────────────────────────────────────────────╮
+│mmlu_0_shot (100 samples): ollama/qwen2.5:7b-instruct-q4_K_M                  │
+╰──────────────────────────────────────────────────────────────────────────────╯
+max_retries: 0, max_connections: 1, max_tokens: 1024, temperature: 0.0,         
+sample_shuffle: 42, dataset: cais/mmlu                                          
+                                                                                
+total time:                              0:00:07                                
+ollama/qwen2.5:7b-instruct-q4_K_M        18,388 tokens [I: 17,888, O: 500]      
+                                                                                
+choice                                                                          
+accuracy  0.610                                                                 
+stderr    0.049                                                                 
+                                                                                
+Log:                                                                            
+experiments/llm_quantization_main_360/run_6_repetition_13/inspect_logs/2026-09-2
+7T14-59-10-00-00_mmlu-0-shot_dgVEEizAkHnM8uxqJKvSmX.eval                        
+                                                                                

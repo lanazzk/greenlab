@@ -1,0 +1,12 @@
+{
+  "run_id": "run_3_repetition_5",
+  "model": "gemma2:9b-instruct-fp16",
+  "benchmark": "mmlu",
+  "warmup_started_at": "2026-09-27T03:53:42.111144+00:00",
+  "warmup_time_s": 2.527,
+  "measurement_started_at": "2026-09-27T03:53:44.638451+00:00",
+  "measurement_finished_at": "2026-09-27T03:54:07.675176+00:00",
+  "cooldown_started_at": "2026-09-27T03:54:07.702862+00:00",
+  "cooldown_time_s": 120.0,
+  "cooldown_finished_at": "2026-09-27T03:56:07.703061+00:00"
+}

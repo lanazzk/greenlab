@@ -1,0 +1,29 @@
+Loading dataset TIGER-Lab/MMLU-Pro from Hugging Face...
+[09/26/26 22:52:37] WARNING  Using the latest cached version of the  load.py:835
+                             dataset since TIGER-Lab/MMLU-Pro                   
+                             couldn't be found on the Hugging Face              
+                             Hub                                                
+                    WARNING  Found the latest cached dataset         cache.py:95
+                             configuration 'default' at                         
+                             /home/gl_team5/.cache/huggingface/datas            
+                             ets/TIGER-Lab___mmlu-pro/default/0.0.0/            
+                             527feea0afed1de15a8c115abf7be4c91212331            
+                             5 (last modified on Thu Sep 24 18:48:08            
+                             2026).                                             
+╭──────────────────────────────────────────────────────────────────────────────╮
+│mmlu_pro (100 samples): ollama/qwen2.5:7b-instruct-q4_K_M                     │
+╰──────────────────────────────────────────────────────────────────────────────╯
+max_retries: 0, max_connections: 1, max_tokens: 1024, temperature: 0.0,         
+sample_shuffle: 42, fewshot: 0, shuffle: False, dataset: TIGER-Lab/MMLU-Pro     
+                                                                                
+total time:                             0:05:16                                 
+ollama/qwen2.5:7b-instruct-q4_K_M       69,849 tokens [I: 25,290, O: 44,559]    
+                                                                                
+choice                                                                          
+accuracy  0.530                                                                 
+stderr    0.050                                                                 
+                                                                                
+Log:                                                                            
+experiments/llm_quantization_main_360/run_7_repetition_19/inspect_logs/2026-09-2
+6T20-52-37-00-00_mmlu-pro_Bv5Bwchf9xmLdrJS7ymmLZ.eval                           
+                                                                                

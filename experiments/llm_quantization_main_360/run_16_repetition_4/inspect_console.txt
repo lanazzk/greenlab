@@ -1,0 +1,23 @@
+Loading dataset TIGER-Lab/MMLU-Pro from Hugging Face...
+[09/27/26 00:43:53] WARNING  Warning: You are sending               _http.py:993
+                             unauthenticated requests to the HF                 
+                             Hub. Please set a HF_TOKEN to enable               
+                             higher rate limits and faster                      
+                             downloads.                                         
+╭──────────────────────────────────────────────────────────────────────────────╮
+│mmlu_pro (100 samples): ollama/llama3.1:8b-instruct-fp16                      │
+╰──────────────────────────────────────────────────────────────────────────────╯
+max_retries: 0, max_connections: 1, max_tokens: 1024, temperature: 0.0,         
+sample_shuffle: 42, fewshot: 0, shuffle: False, dataset: TIGER-Lab/MMLU-Pro     
+                                                                                
+total time:                            0:10:17                                  
+ollama/llama3.1:8b-instruct-fp16       56,687 tokens [I: 22,545, O: 34,142]     
+                                                                                
+choice                                                                          
+accuracy  0.430                                                                 
+stderr    0.050                                                                 
+                                                                                
+Log:                                                                            
+experiments/llm_quantization_main_360/run_16_repetition_4/inspect_logs/2026-09-2
+6T22-43-54-00-00_mmlu-pro_XskWmXTE2mPAWLaaNZ2Con.eval                           
+                                                                                

@@ -1,0 +1,23 @@
+Loading dataset ehovy/race from Hugging Face...
+[09/28/26 01:56:59] WARNING  Warning: You are sending               _http.py:993
+                             unauthenticated requests to the HF                 
+                             Hub. Please set a HF_TOKEN to enable               
+                             higher rate limits and faster                      
+                             downloads.                                         
+╭──────────────────────────────────────────────────────────────────────────────╮
+│race_h (100 samples): ollama/qwen2.5:7b-instruct-q4_K_M                       │
+╰──────────────────────────────────────────────────────────────────────────────╯
+max_retries: 0, max_connections: 1, max_tokens: 1024, temperature: 0.0,         
+sample_shuffle: 42, dataset: ehovy/race                                         
+                                                                                
+total time:                              0:00:11                                
+ollama/qwen2.5:7b-instruct-q4_K_M        53,339 tokens [I: 52,839, O: 500]      
+                                                                                
+choice                                                                          
+accuracy  0.890                                                                 
+stderr    0.032                                                                 
+                                                                                
+Log:                                                                            
+experiments/llm_quantization_main_360/run_8_repetition_2/inspect_logs/2026-09-27
+T23-56-59-00-00_race-h_dsHgHcRNEF2wUiAK6fAML3.eval                              
+                                                                                

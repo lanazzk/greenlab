@@ -1,0 +1,18 @@
+Loading dataset ehovy/race from Hugging Face...
+╭──────────────────────────────────────────────────────────────────────────────╮
+│race_h (100 samples): ollama/gemma2:9b-instruct-fp16                          │
+╰──────────────────────────────────────────────────────────────────────────────╯
+max_retries: 0, max_connections: 1, max_tokens: 1024, temperature: 0.0,         
+sample_shuffle: 42, dataset: ehovy/race                                         
+                                                                                
+total time:                            0:00:22                                  
+ollama/gemma2:9b-instruct-fp16         52,437 tokens [I: 51,837, O: 600]        
+                                                                                
+choice                                                                          
+accuracy  0.850                                                                 
+stderr    0.036                                                                 
+                                                                                
+Log:                                                                            
+experiments/llm_quantization_main_360/run_5_repetition_9/inspect_logs/2026-09-26
+T21-12-24-00-00_race-h_boRTrckzC26w3PBNLfjkro.eval                              
+                                                                                

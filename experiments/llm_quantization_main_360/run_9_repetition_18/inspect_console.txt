@@ -1,0 +1,18 @@
+Loading dataset cais/mmlu from Hugging Face...
+╭──────────────────────────────────────────────────────────────────────────────╮
+│mmlu_0_shot (100 samples): ollama/qwen2.5:7b-instruct-fp16                    │
+╰──────────────────────────────────────────────────────────────────────────────╯
+max_retries: 0, max_connections: 1, max_tokens: 1024, temperature: 0.0,         
+sample_shuffle: 42, dataset: cais/mmlu                                          
+                                                                                
+total time:                             0:00:13                                 
+ollama/qwen2.5:7b-instruct-fp16         18,388 tokens [I: 17,888, O: 500]       
+                                                                                
+choice                                                                          
+accuracy  0.660                                                                 
+stderr    0.048                                                                 
+                                                                                
+Log:                                                                            
+experiments/llm_quantization_main_360/run_9_repetition_18/inspect_logs/2026-09-2
+7T18-07-21-00-00_mmlu-0-shot_RY8352y5tZTHsWCMUjWHtz.eval                        
+                                                                                

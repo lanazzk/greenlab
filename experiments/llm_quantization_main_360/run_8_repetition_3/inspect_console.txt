@@ -1,0 +1,32 @@
+Loading dataset ehovy/race from Hugging Face...
+[09/27/26 06:55:07] WARNING  Warning: You are sending               _http.py:993
+                             unauthenticated requests to the HF                 
+                             Hub. Please set a HF_TOKEN to enable               
+                             higher rate limits and faster                      
+                             downloads.                                         
+[09/27/26 06:55:18] WARNING  Using the latest cached version of the  load.py:835
+                             dataset since ehovy/race couldn't be               
+                             found on the Hugging Face Hub                      
+                    WARNING  Found the latest cached dataset         cache.py:95
+                             configuration 'high' at                            
+                             /home/gl_team5/.cache/huggingface/datas            
+                             ets/ehovy___race/high/0.0.0/2fec9fd81f1            
+                             dc971569a9b729c43f2f0e6436637 (last                
+                             modified on Sun Sep 27 06:45:25 2026).             
+╭──────────────────────────────────────────────────────────────────────────────╮
+│race_h (100 samples): ollama/qwen2.5:7b-instruct-q4_K_M                       │
+╰──────────────────────────────────────────────────────────────────────────────╯
+max_retries: 0, max_connections: 1, max_tokens: 1024, temperature: 0.0,         
+sample_shuffle: 42, dataset: ehovy/race                                         
+                                                                                
+total time:                              0:00:11                                
+ollama/qwen2.5:7b-instruct-q4_K_M        53,059 tokens [I: 52,559, O: 500]      
+                                                                                
+choice                                                                          
+accuracy  0.860                                                                 
+stderr    0.035                                                                 
+                                                                                
+Log:                                                                            
+experiments/llm_quantization_main_360/run_8_repetition_3/inspect_logs/2026-09-27
+T04-55-18-00-00_race-h_6XxswgNcRpxFocZsvPvTKP.eval                              
+                                                                                
