@@ -1,5 +1,0 @@
-# Install these alongside experiment-runner/requirements.txt on the SSH machine.
-pandas
-psutil
-nvidia-ml-py
-inspect-ai

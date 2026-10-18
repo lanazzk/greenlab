@@ -1,132 +1,103 @@
 #!/usr/bin/env python3
-"""Run one Inspect benchmark and save LLM-specific metrics for Experiment Runner."""
+"""Run one Inspect benchmark and save its metrics for Experiment Runner."""
 
 import argparse
 import json
 import subprocess
 import sys
 import time
+from datetime import datetime
 from pathlib import Path
-from typing import Any, Iterable, Optional
+from typing import Any
+
+from inspect_ai.log import read_eval_log
 
 
 def value(obj: Any, name: str, default=None):
+    """Read a field from either an Inspect object or a decoded mapping."""
     if isinstance(obj, dict):
         return obj.get(name, default)
     return getattr(obj, name, default)
 
 
-def numeric(item: Any) -> Optional[float]:
-    if isinstance(item, bool):
-        return float(item)
-    if isinstance(item, (int, float)):
-        return float(item)
-    try:
-        return float(item)
-    except (TypeError, ValueError):
-        return None
-
-
-def eval_logs(log_dir: Path) -> Iterable[Path]:
+def eval_logs(log_dir: Path) -> list[Path]:
     return sorted(log_dir.rglob("*.eval"), key=lambda path: path.stat().st_mtime)
 
 
-def extract_token_limit_hits(log_path: Path, max_tokens: int):
-    """Return (number hitting the output cap, number of samples)."""
-    try:
-        from inspect_ai.log import read_eval_log
-        log = read_eval_log(str(log_path))
-    except Exception:
-        return None, None
+def extract_token_limit_hits(log: Any, max_tokens: int) -> tuple[int, int]:
+    """Return the number of capped samples and the total sample count."""
     samples = list(value(log, "samples", []) or [])
+    limit_stop_reasons = {
+        "length",
+        "max_tokens",
+        "max_tokens_exceeded",
+        "stop_length",
+    }
     hits = 0
+
     for sample in samples:
         output = value(sample, "output")
+        if output is None:
+            continue
+
         usage = value(output, "usage")
-        output_tokens = numeric(value(usage, "output_tokens"))
+        output_tokens = value(usage, "output_tokens")
         stop_reason = str(value(output, "stop_reason", value(output, "finish_reason", ""))).lower()
-        if (output_tokens is not None and output_tokens >= max_tokens) or stop_reason in {
-            "length", "max_tokens", "max_tokens_exceeded", "stop_length"
-        }:
-            hits += 1
+
+        reached_limit = stop_reason in limit_stop_reasons
+        reached_limit |= (output_tokens is not None and int(output_tokens) >= max_tokens)
+        hits += reached_limit
+
     return hits, len(samples)
 
 
-def extract_metrics(log_path: Path):
-    """Read Inspect's structured log without relying on console formatting."""
-    try:
-        from inspect_ai.log import read_eval_log
-    except ImportError:
-        return None, None, None, "inspect_ai.log.read_eval_log is unavailable"
-    try:
-        log = read_eval_log(str(log_path))
-    except Exception as exc:  # Keep raw Inspect files available for later inspection.
-        return None, None, None, f"could not read {log_path.name}: {exc}"
+def extract_metrics(log: Any) -> tuple[float, float, float]:
+    """Extract total input tokens, output tokens, and benchmark accuracy."""
+    input_tokens = 0.0
+    output_tokens = 0.0
 
-    input_tokens = 0
-    output_tokens = 0
-    token_data_found = False
-    score_values = []
     for sample in value(log, "samples", []) or []:
         output = value(sample, "output")
-        usage = value(output, "usage")
-        current_input = numeric(value(usage, "input_tokens"))
-        current_output = numeric(value(usage, "output_tokens"))
-        if current_input is not None:
-            input_tokens += current_input
-            token_data_found = True
-        if current_output is not None:
-            output_tokens += current_output
-            token_data_found = True
-        scores = value(sample, "scores", {}) or {}
-        score_items = scores.values() if isinstance(scores, dict) else scores
-        for score in score_items:
-            score_value = numeric(value(score, "value", score))
-            if score_value is not None:
-                score_values.append(score_value)
+        if output is None:
+            continue
 
-    accuracy = sum(score_values) / len(score_values) if score_values else None
-    # Inspect stores aggregate benchmark results under EvalLog.results.scores.
+        usage = value(output, "usage")
+        if value(usage, "input_tokens") is not None:
+            input_tokens += float(value(usage, "input_tokens"))
+        if value(usage, "output_tokens") is not None:
+            output_tokens += float(value(usage, "output_tokens"))
+
+    accuracy = None
     results = value(log, "results")
     for score in value(results, "scores", []) or []:
-        metrics = value(score, "metrics", {}) or {}
-        items = metrics.items() if isinstance(metrics, dict) else []
-        for metric_name, metric in items:
-            if metric_name.lower() in {"accuracy", "acc", "exact_match"}:
-                metric_value = numeric(value(metric, "value", metric))
-                if metric_value is not None:
-                    accuracy = metric_value
-                    break
+        for name, metric in value(score, "metrics", {}).items():
+            if name.lower() in {"accuracy", "acc", "exact_match"}:
+                accuracy = float(value(metric, "value", metric))
+                break
         if accuracy is not None:
             break
-    if accuracy is not None and 0 <= accuracy <= 1:
+
+    if accuracy is None:
+        raise ValueError("Inspect log does not contain an accuracy metric")
+    if 0 <= accuracy <= 1:
         accuracy *= 100
-    return (input_tokens if token_data_found else None,
-            output_tokens if token_data_found else None,
-            accuracy, None)
+
+    return input_tokens, output_tokens, accuracy
 
 
-def main():
-    parser = argparse.ArgumentParser()
-    parser.add_argument("--model", required=True)
-    parser.add_argument("--task", required=True)
-    parser.add_argument("--benchmark", required=True)
-    parser.add_argument("--seed", type=int, required=True)
-    parser.add_argument("--limit", type=int, required=True)
-    parser.add_argument("--temperature", type=float, required=True)
-    parser.add_argument("--max-tokens", type=int, required=True)
-    parser.add_argument("--num-ctx", type=int, required=True)
-    parser.add_argument("--output", type=Path, required=True)
-    parser.add_argument("--log-dir", type=Path, required=True)
-    parser.add_argument("--task-arg", action="append", default=[],
-                        help="Inspect task argument in name=value form; may be repeated")
-    args = parser.parse_args()
-    args.output.parent.mkdir(parents=True, exist_ok=True)
-    args.log_dir.mkdir(parents=True, exist_ok=True)
+def extract_eval_time(log: Any) -> float:
+    """Return the duration between Inspect's start and completion timestamps."""
+    stats = value(log, "stats")
+    started = datetime.fromisoformat(str(value(stats, "started_at")).replace("Z", "+00:00"))
+    completed = datetime.fromisoformat(str(value(stats, "completed_at")).replace("Z", "+00:00"))
+    return (completed - started).total_seconds()
 
-    # num_ctx is configured on the Ollama server with OLLAMA_CONTEXT_LENGTH.
+
+def build_command(args: argparse.Namespace) -> list[str]:
     command = [
-        "inspect", "eval", args.task,
+        "inspect",
+        "eval",
+        args.task,
         "--model", f"ollama/{args.model}",
         "--limit", str(args.limit),
         "--sample-shuffle", str(args.seed),
@@ -138,20 +109,34 @@ def main():
     ]
     for task_arg in args.task_arg:
         command.extend(["-T", task_arg])
-    started = time.monotonic()
-    completed = subprocess.run(command, text=True, stdout=sys.stdout, stderr=sys.stderr, check=False)
-    inference_time = time.monotonic() - started
-    logs = list(eval_logs(args.log_dir))
-    input_tokens = output_tokens = accuracy = None
-    extraction_error = None
-    token_limit_hits = token_limit_total = None
-    if logs:
-        input_tokens, output_tokens, accuracy, extraction_error = extract_metrics(logs[-1])
-        token_limit_hits, token_limit_total = extract_token_limit_hits(logs[-1], args.max_tokens)
-    else:
-        extraction_error = "Inspect did not create an .eval log"
+    return command
 
-    metrics = {
+
+def run_inspect(args: argparse.Namespace, command: list[str]) -> tuple[int, float]:
+    started = time.monotonic()
+    completed = subprocess.run(
+        command,
+        text=True,
+        stdout=sys.stdout,
+        stderr=sys.stderr,
+        check=False,
+    )
+    return completed.returncode, time.monotonic() - started
+
+
+def make_metrics(
+    args: argparse.Namespace,
+    command: list[str],
+    returncode: int,
+    run_time: float,
+    log_path: Path,
+) -> dict[str, object]:
+    log = read_eval_log(str(log_path))
+    input_tokens, output_tokens, accuracy = extract_metrics(log)
+    token_limit_hits, token_limit_total = extract_token_limit_hits(log, args.max_tokens)
+    inference_time = extract_eval_time(log)
+
+    return {
         "benchmark": args.benchmark,
         "model": args.model,
         "sample_seed": args.seed,
@@ -161,22 +146,49 @@ def main():
         "max_tokens": args.max_tokens,
         "task_args": args.task_arg,
         "inspect_command": command,
-        "inspect_returncode": completed.returncode,
+        "inspect_returncode": returncode,
         "inference_time_s": round(inference_time, 6),
+        "run_time_s": round(run_time, 6),
         "input_tokens": input_tokens,
         "output_tokens": output_tokens,
-        "throughput_tokens_s": round(output_tokens / inference_time, 6) if output_tokens is not None and inference_time else None,
+        "throughput_tokens_s": round(output_tokens / inference_time, 6),
+        "eval_log": str(log_path),
         "accuracy": accuracy,
-        "token_limit_hits": token_limit_hits,
-        "token_limit_total": token_limit_total,
-        "token_limit_rate": (token_limit_hits / token_limit_total
-                              if token_limit_hits is not None and token_limit_total else None),
-        "eval_log": str(logs[-1]) if logs else None,
-        "extraction_error": extraction_error,
+        "token_limit_rate": token_limit_hits / token_limit_total,
     }
+
+
+def parse_args() -> argparse.Namespace:
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--model", required=True)
+    parser.add_argument("--task", required=True)
+    parser.add_argument("--benchmark", required=True)
+    parser.add_argument("--seed", type=int, required=True)
+    parser.add_argument("--limit", type=int, required=True)
+    parser.add_argument("--temperature", type=float, required=True)
+    parser.add_argument("--max-tokens", type=int, required=True)
+    parser.add_argument("--num-ctx", type=int, required=True)
+    parser.add_argument("--output", type=Path, required=True)
+    parser.add_argument("--log-dir", type=Path, required=True)
+    parser.add_argument("--task-arg", action="append", default=[])
+    return parser.parse_args()
+
+
+def main() -> None:
+    args = parse_args()
+    args.output.parent.mkdir(parents=True, exist_ok=True)
+    args.log_dir.mkdir(parents=True, exist_ok=True)
+
+    command = build_command(args)
+    returncode, run_time = run_inspect(args, command)
+    logs = eval_logs(args.log_dir)
+    if not logs:
+        raise RuntimeError("Inspect did not create an .eval log")
+
+    metrics = make_metrics(args, command, returncode, run_time, logs[-1])
     args.output.write_text(json.dumps(metrics, indent=2), encoding="utf-8")
-    if completed.returncode:
-        raise SystemExit(completed.returncode)
+    if returncode:
+        raise SystemExit(returncode)
 
 
 if __name__ == "__main__":

@@ -1,0 +1,9 @@
+# Runtime dependencies for the project and the bundled Experiment Runner.
+# `nvidia-ml-py` provides the `pynvml` module used by system_sampler.py.
+pandas
+psutil
+tabulate
+dill
+jsonpickle
+nvidia-ml-py
+inspect-ai

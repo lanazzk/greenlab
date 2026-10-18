@@ -1,0 +1,9 @@
+{
+  "run_id": "run_8_repetition_10",
+  "model": "qwen2.5:7b-instruct-q4_K_M",
+  "benchmark": "race_h",
+  "warmup_started_at": "2026-10-18T11:36:23.380368+00:00",
+  "warmup_time_s": 1.136,
+  "measurement_started_at": "2026-10-18T11:36:24.516188+00:00",
+  "measurement_finished_at": "2026-10-18T11:36:40.327503+00:00"
+}
