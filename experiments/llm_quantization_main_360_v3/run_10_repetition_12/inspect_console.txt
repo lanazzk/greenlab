@@ -1,0 +1,6 @@
+Loading dataset TIGER-Lab/MMLU-Pro from Hugging Face...
+[10/18/26 23:15:33] WARNING  Warning: You are sending               _http.py:993
+                             unauthenticated requests to the HF                 
+                             Hub. Please set a HF_TOKEN to enable               
+                             higher rate limits and faster                      
+                             downloads.                                         

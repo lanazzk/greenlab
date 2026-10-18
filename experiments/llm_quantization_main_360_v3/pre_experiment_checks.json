@@ -12,5 +12,19 @@
     "warmup_started_at": "2026-10-18T11:27:20.461992+00:00",
     "warmup_finished_at": "2026-10-18T11:29:20.613126+00:00",
     "warmup_duration_s": 120
+  },
+  {
+    "idle_baseline_dir": "idle_baseline/20261018T160101Z",
+    "dry_runs_dir": "dry_runs/20261018T160302Z",
+    "idle_started_at": "2026-10-18T16:01:01.860818+00:00",
+    "idle_finished_at": "2026-10-18T16:03:02.423185+00:00",
+    "idle_duration_s": 120,
+    "dry_run_count": 18,
+    "dry_runs_started_at": "2026-10-18T16:03:02.423283+00:00",
+    "dry_runs_finished_at": "2026-10-18T16:18:20.288363+00:00",
+    "warmup_model": "gemma2:9b-instruct-q4_K_M",
+    "warmup_started_at": "2026-10-18T16:20:20.288565+00:00",
+    "warmup_finished_at": "2026-10-18T16:22:20.480925+00:00",
+    "warmup_duration_s": 120
   }
 ]

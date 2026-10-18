@@ -1,0 +1,12 @@
+{
+  "run_id": "run_14_repetition_17",
+  "model": "llama3.1:8b-instruct-q4_K_M",
+  "benchmark": "race_h",
+  "warmup_started_at": "2026-10-18T16:34:44.297990+00:00",
+  "warmup_time_s": 1.183,
+  "measurement_started_at": "2026-10-18T16:34:45.480980+00:00",
+  "measurement_finished_at": "2026-10-18T16:35:01.444644+00:00",
+  "cooldown_started_at": "2026-10-18T16:35:01.570229+00:00",
+  "cooldown_time_s": 120.0,
+  "cooldown_finished_at": "2026-10-18T16:37:01.570404+00:00"
+}
