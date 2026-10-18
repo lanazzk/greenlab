@@ -1,0 +1,9 @@
+{
+  "run_id": "run_10_repetition_10",
+  "model": "qwen2.5:7b-instruct-fp16",
+  "benchmark": "mmlu_pro",
+  "warmup_started_at": "2026-10-18T13:23:20.288619+00:00",
+  "warmup_time_s": 1.899,
+  "measurement_started_at": "2026-10-18T13:23:22.187196+00:00",
+  "measurement_finished_at": "2026-10-18T13:36:04.088322+00:00"
+}
