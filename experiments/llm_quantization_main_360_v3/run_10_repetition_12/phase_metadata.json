@@ -4,5 +4,9 @@
   "benchmark": "mmlu_pro",
   "warmup_started_at": "2026-10-18T21:15:29.048599+00:00",
   "warmup_time_s": 1.903,
-  "measurement_started_at": "2026-10-18T21:15:30.951618+00:00"
+  "measurement_started_at": "2026-10-18T21:15:30.951618+00:00",
+  "measurement_finished_at": "2026-10-18T21:28:13.154907+00:00",
+  "cooldown_started_at": "2026-10-18T21:28:13.230474+00:00",
+  "cooldown_time_s": 120.0,
+  "cooldown_finished_at": "2026-10-18T21:30:13.230655+00:00"
 }
