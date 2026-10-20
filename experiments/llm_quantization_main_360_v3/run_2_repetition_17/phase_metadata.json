@@ -2,8 +2,11 @@
   "run_id": "run_2_repetition_17",
   "model": "gemma2:9b-instruct-q4_K_M",
   "benchmark": "race_h",
-  "warmup_started_at": "2026-10-20T00:00:26.941975+00:00",
-  "warmup_time_s": 1.254,
-  "measurement_started_at": "2026-10-20T00:00:28.196030+00:00",
-  "measurement_finished_at": "2026-10-20T00:00:48.173831+00:00"
+  "warmup_started_at": "2026-10-20T12:22:20.463069+00:00",
+  "warmup_time_s": 1.405,
+  "measurement_started_at": "2026-10-20T12:22:21.868295+00:00",
+  "measurement_finished_at": "2026-10-20T12:22:41.644421+00:00",
+  "cooldown_started_at": "2026-10-20T12:22:41.766987+00:00",
+  "cooldown_time_s": 120.0,
+  "cooldown_finished_at": "2026-10-20T12:24:41.767196+00:00"
 }

@@ -33,12 +33,12 @@
     "shuffle=false"
   ],
   "inspect_returncode": 0,
-  "inference_time_s": 15.0,
-  "run_time_s": 18.622453,
+  "inference_time_s": 16.0,
+  "run_time_s": 18.459088,
   "input_tokens": 54132.0,
   "output_tokens": 600.0,
-  "throughput_tokens_s": 40.0,
-  "eval_log": "/home/gl_team5/greenlabproject/experiments/llm_quantization_main_360_v3/run_2_repetition_17/inspect_logs/2026-10-20T00-00-32-00-00_race-h_GCD5mc3SsuLJo3nuBABtxN.eval",
+  "throughput_tokens_s": 37.5,
+  "eval_log": "/home/gl_team5/greenlabproject/experiments/llm_quantization_main_360_v3/run_2_repetition_17/inspect_logs/2026-10-20T12-22-25-00-00_race-h_iYXUcZ2DTKwMuGLXeBVLyQ.eval",
   "accuracy": 93.0,
   "token_limit_rate": 0.0
 }
