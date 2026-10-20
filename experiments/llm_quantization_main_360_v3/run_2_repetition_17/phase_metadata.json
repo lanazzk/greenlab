@@ -1,0 +1,9 @@
+{
+  "run_id": "run_2_repetition_17",
+  "model": "gemma2:9b-instruct-q4_K_M",
+  "benchmark": "race_h",
+  "warmup_started_at": "2026-10-20T00:00:26.941975+00:00",
+  "warmup_time_s": 1.254,
+  "measurement_started_at": "2026-10-20T00:00:28.196030+00:00",
+  "measurement_finished_at": "2026-10-20T00:00:48.173831+00:00"
+}

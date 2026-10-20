@@ -1,0 +1,12 @@
+{
+  "run_id": "run_11_repetition_4",
+  "model": "qwen2.5:7b-instruct-fp16",
+  "benchmark": "race_h",
+  "warmup_started_at": "2026-10-19T18:11:23.701779+00:00",
+  "warmup_time_s": 1.909,
+  "measurement_started_at": "2026-10-19T18:11:25.610638+00:00",
+  "measurement_finished_at": "2026-10-19T18:11:45.738771+00:00",
+  "cooldown_started_at": "2026-10-19T18:11:45.766449+00:00",
+  "cooldown_time_s": 120.0,
+  "cooldown_finished_at": "2026-10-19T18:13:45.766658+00:00"
+}

@@ -5,5 +5,8 @@
   "warmup_started_at": "2026-10-19T14:15:32.416835+00:00",
   "warmup_time_s": 2.304,
   "measurement_started_at": "2026-10-19T14:15:34.720946+00:00",
-  "measurement_finished_at": "2026-10-19T14:16:01.565490+00:00"
+  "measurement_finished_at": "2026-10-19T14:16:01.565490+00:00",
+  "cooldown_started_at": "2026-10-19T14:16:01.691838+00:00",
+  "cooldown_time_s": 120.0,
+  "cooldown_finished_at": "2026-10-19T14:18:01.692049+00:00"
 }
