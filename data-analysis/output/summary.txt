@@ -1,0 +1,27 @@
+Runs: 360 (18 configurations); question records: 36000
+Runs with GPU energy < 50% of their configuration median: run_5_repetition_19 gemma2:9b-instruct-fp16 race_h 134.4 J
+IQR-flagged run-metric observations: RQ1 = 17, RQ2 = 98 (all retained)
+RQ1: Shapiro-Wilk checks = 36 (rejected 3, not rejected 33, constant 0); Levene run in 15 comparisons, rejected in 4
+RQ1: tests used -> Mann-Whitney U 3, Student t 11, Welch t 4; significant after BH: 17/18
+  total_energy_j: mean change -58.91 to -24.74 %; significant 9/9
+  average_power_w: mean change -10.94 to 12.74 %; significant 8/9
+RQ2: Shapiro-Wilk checks = 108 (rejected 67, not rejected 29, constant 12); Levene run in 9 comparisons, rejected in 1
+RQ2: tests used -> Mann-Whitney U 45, Student t 8, Welch t 1; significant after BH: 54/54
+  inference_time_s: mean change -63.88 to -28.71 %; significant 9/9
+  throughput_tokens_s: mean change 40.18 to 143.29 %; significant 9/9
+  cpu_utilization_pct: mean change 0.32 to 2.46 %; significant 9/9
+  gpu_utilization_pct: mean change -40.64 to -7.93 %; significant 9/9
+  peak_ram_mb: mean change -23.54 to -18.74 %; significant 9/9
+  peak_gpu_memory_mb: mean change -60.94 to -55.95 %; significant 9/9
+Questions whose correctness differs between repetitions: 0
+Blank predicted answers: 1960
+RQ3.1: accuracy change -5 to 5 pp; significant after BH: 0/9; smallest raw p = 0.0625
+RQ3.2 total_energy_j: rho = -0.346, BH p = 0.3597
+RQ3.2 average_power_w: rho = 0.481, BH p = 0.3597
+RQ3.3 inference_time_s: rho = -0.312, BH p = 0.7784
+RQ3.3 throughput_tokens_s: rho = 0.203, BH p = 0.7784
+RQ3.3 cpu_utilization_pct: rho = -0.177, BH p = 0.7784
+RQ3.3 gpu_utilization_pct: rho = 0.338, BH p = 0.7784
+RQ3.3 peak_ram_mb: rho = 0.489, BH p = 0.7784
+RQ3.3 peak_gpu_memory_mb: rho = 0.025, BH p = 0.9565
+SCI: E = 5.195 kWh, O = 1422.4 g, M = 136.4 g, SCI = 43.30 mg CO2e per answer

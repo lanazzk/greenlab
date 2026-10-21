@@ -1,0 +1,191 @@
+\begin{table*}[t]
+\centering
+\small
+\caption{Levene checks: average power w; median centered, only when both normality checks do not reject.}
+\label{tab:variance-average_power_w}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{lllll}
+\toprule
+model\_family & benchmark & statistic & p\_raw & status \\
+\midrule
+Llama 3.1 8B & MMLU & 0.677 & 0.416 & not rejected \\
+Llama 3.1 8B & MMLU-Pro & 6.937 & 0.012 & rejected \\
+Llama 3.1 8B & RACE-H & 2.645 & 0.112 & not rejected \\
+Qwen 2.5 7B & MMLU & 0.529 & 0.471 & not rejected \\
+Qwen 2.5 7B & MMLU-Pro & 2.359 & 0.133 & not rejected \\
+Qwen 2.5 7B & RACE-H & --- & --- & not run: normality gate \\
+Gemma 2 9B & MMLU & 1.743 & 0.195 & not rejected \\
+Gemma 2 9B & MMLU-Pro & 12.038 & 0.001 & rejected \\
+Gemma 2 9B & RACE-H & --- & --- & not run: normality gate \\
+\bottomrule
+\end{tabular}
+}
+\end{table*}
+
+\begin{table*}[t]
+\centering
+\small
+\caption{Levene checks: cpu utilization pct; median centered, only when both normality checks do not reject.}
+\label{tab:variance-cpu_utilization_pct}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{lllll}
+\toprule
+model\_family & benchmark & statistic & p\_raw & status \\
+\midrule
+Llama 3.1 8B & MMLU & 0.089 & 0.767 & not rejected \\
+Llama 3.1 8B & MMLU-Pro & 1.358 & 0.251 & not rejected \\
+Llama 3.1 8B & RACE-H & --- & --- & not run: normality gate \\
+Qwen 2.5 7B & MMLU & 0.599 & 0.444 & not rejected \\
+Qwen 2.5 7B & MMLU-Pro & 0.009 & 0.925 & not rejected \\
+Qwen 2.5 7B & RACE-H & --- & --- & not run: normality gate \\
+Gemma 2 9B & MMLU & 2.191 & 0.147 & not rejected \\
+Gemma 2 9B & MMLU-Pro & 0.7 & 0.408 & not rejected \\
+Gemma 2 9B & RACE-H & --- & --- & not run: normality gate \\
+\bottomrule
+\end{tabular}
+}
+\end{table*}
+
+\begin{table*}[t]
+\centering
+\small
+\caption{Levene checks: gpu utilization pct; median centered, only when both normality checks do not reject.}
+\label{tab:variance-gpu_utilization_pct}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{lllll}
+\toprule
+model\_family & benchmark & statistic & p\_raw & status \\
+\midrule
+Llama 3.1 8B & MMLU & --- & --- & not run: normality gate \\
+Llama 3.1 8B & MMLU-Pro & --- & --- & not run: normality gate \\
+Llama 3.1 8B & RACE-H & --- & --- & not run: normality gate \\
+Qwen 2.5 7B & MMLU & --- & --- & not run: normality gate \\
+Qwen 2.5 7B & MMLU-Pro & --- & --- & not run: normality gate \\
+Qwen 2.5 7B & RACE-H & --- & --- & not run: normality gate \\
+Gemma 2 9B & MMLU & 0.803 & 0.376 & not rejected \\
+Gemma 2 9B & MMLU-Pro & 7.842 & 0.008 & rejected \\
+Gemma 2 9B & RACE-H & --- & --- & not run: normality gate \\
+\bottomrule
+\end{tabular}
+}
+\end{table*}
+
+\begin{table*}[t]
+\centering
+\small
+\caption{Levene checks: inference time s; median centered, only when both normality checks do not reject.}
+\label{tab:variance-inference_time_s}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{lllll}
+\toprule
+model\_family & benchmark & statistic & p\_raw & status \\
+\midrule
+Llama 3.1 8B & MMLU & --- & --- & not run: normality gate \\
+Llama 3.1 8B & MMLU-Pro & --- & --- & not run: normality gate \\
+Llama 3.1 8B & RACE-H & --- & --- & not run: normality gate \\
+Qwen 2.5 7B & MMLU & --- & --- & not run: normality gate \\
+Qwen 2.5 7B & MMLU-Pro & --- & --- & not run: normality gate \\
+Qwen 2.5 7B & RACE-H & --- & --- & not run: normality gate \\
+Gemma 2 9B & MMLU & --- & --- & not run: normality gate \\
+Gemma 2 9B & MMLU-Pro & --- & --- & not run: normality gate \\
+Gemma 2 9B & RACE-H & --- & --- & not run: normality gate \\
+\bottomrule
+\end{tabular}
+}
+\end{table*}
+
+\begin{table*}[t]
+\centering
+\small
+\caption{Levene checks: peak gpu memory mb; median centered, only when both normality checks do not reject.}
+\label{tab:variance-peak_gpu_memory_mb}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{lllll}
+\toprule
+model\_family & benchmark & statistic & p\_raw & status \\
+\midrule
+Llama 3.1 8B & MMLU & --- & --- & not run: normality gate \\
+Llama 3.1 8B & MMLU-Pro & --- & --- & not run: normality gate \\
+Llama 3.1 8B & RACE-H & --- & --- & not run: normality gate \\
+Qwen 2.5 7B & MMLU & --- & --- & not run: normality gate \\
+Qwen 2.5 7B & MMLU-Pro & --- & --- & not run: normality gate \\
+Qwen 2.5 7B & RACE-H & --- & --- & not run: normality gate \\
+Gemma 2 9B & MMLU & --- & --- & not run: normality gate \\
+Gemma 2 9B & MMLU-Pro & --- & --- & not run: normality gate \\
+Gemma 2 9B & RACE-H & --- & --- & not run: normality gate \\
+\bottomrule
+\end{tabular}
+}
+\end{table*}
+
+\begin{table*}[t]
+\centering
+\small
+\caption{Levene checks: peak ram mb; median centered, only when both normality checks do not reject.}
+\label{tab:variance-peak_ram_mb}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{lllll}
+\toprule
+model\_family & benchmark & statistic & p\_raw & status \\
+\midrule
+Llama 3.1 8B & MMLU & --- & --- & not run: normality gate \\
+Llama 3.1 8B & MMLU-Pro & --- & --- & not run: normality gate \\
+Llama 3.1 8B & RACE-H & --- & --- & not run: normality gate \\
+Qwen 2.5 7B & MMLU & --- & --- & not run: normality gate \\
+Qwen 2.5 7B & MMLU-Pro & --- & --- & not run: normality gate \\
+Qwen 2.5 7B & RACE-H & --- & --- & not run: normality gate \\
+Gemma 2 9B & MMLU & --- & --- & not run: normality gate \\
+Gemma 2 9B & MMLU-Pro & --- & --- & not run: normality gate \\
+Gemma 2 9B & RACE-H & 2.41 & 0.129 & not rejected \\
+\bottomrule
+\end{tabular}
+}
+\end{table*}
+
+\begin{table*}[t]
+\centering
+\small
+\caption{Levene checks: throughput tokens s; median centered, only when both normality checks do not reject.}
+\label{tab:variance-throughput_tokens_s}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{lllll}
+\toprule
+model\_family & benchmark & statistic & p\_raw & status \\
+\midrule
+Llama 3.1 8B & MMLU & --- & --- & not run: normality gate \\
+Llama 3.1 8B & MMLU-Pro & --- & --- & not run: normality gate \\
+Llama 3.1 8B & RACE-H & --- & --- & not run: normality gate \\
+Qwen 2.5 7B & MMLU & --- & --- & not run: normality gate \\
+Qwen 2.5 7B & MMLU-Pro & --- & --- & not run: normality gate \\
+Qwen 2.5 7B & RACE-H & --- & --- & not run: normality gate \\
+Gemma 2 9B & MMLU & --- & --- & not run: normality gate \\
+Gemma 2 9B & MMLU-Pro & --- & --- & not run: normality gate \\
+Gemma 2 9B & RACE-H & --- & --- & not run: normality gate \\
+\bottomrule
+\end{tabular}
+}
+\end{table*}
+
+\begin{table*}[t]
+\centering
+\small
+\caption{Levene checks: total energy j; median centered, only when both normality checks do not reject.}
+\label{tab:variance-total_energy_j}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{lllll}
+\toprule
+model\_family & benchmark & statistic & p\_raw & status \\
+\midrule
+Llama 3.1 8B & MMLU & 2.355 & 0.133 & not rejected \\
+Llama 3.1 8B & MMLU-Pro & 3.536 & 0.068 & not rejected \\
+Llama 3.1 8B & RACE-H & 0.503 & 0.482 & not rejected \\
+Qwen 2.5 7B & MMLU & 1.121 & 0.296 & not rejected \\
+Qwen 2.5 7B & MMLU-Pro & 4.114 & 0.05 & rejected \\
+Qwen 2.5 7B & RACE-H & 0.005 & 0.941 & not rejected \\
+Gemma 2 9B & MMLU & 8.416 & 0.006 & rejected \\
+Gemma 2 9B & MMLU-Pro & 0.822 & 0.37 & not rejected \\
+Gemma 2 9B & RACE-H & --- & --- & not run: normality gate \\
+\bottomrule
+\end{tabular}
+}
+\end{table*}

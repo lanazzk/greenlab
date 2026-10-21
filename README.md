@@ -4,6 +4,14 @@ This project compares the energy use, execution time, system resources, and benc
 
 Detailed field definitions, formulas, timing boundaries, and limitations are documented in [REPORT.md](REPORT.md).
 
+**Final dataset:** `experiments/llm_quantization_main_360_v3/` is the dataset used in the report. `experiments/llm_quantization_main_360/` is an earlier, superseded run kept only for transparency.
+
+**Reproduce the analysis:** see [data-analysis/README.md](data-analysis/README.md). In short, from the repository root:
+
+```bash
+Rscript data-analysis/analysis.R
+```
+
 ## What is measured
 
 Each completed run records:
@@ -23,7 +31,7 @@ The main configuration is [RunnerConfig.py](RunnerConfig.py):
 - 6 model configurations × 3 benchmarks × 20 repetitions = 360 runs
 - 100 questions per formal run
 - Fixed seed: `42`
-- Maximum output tokens: `1024`
+- Maximum output tokens: `1024` for MMLU-Pro and RACE-H; MMLU uses Inspect's `mmlu_0_shot` task, which caps answers at 16 tokens
 - System sampler interval: `100 ms`
 - 120-second cooldown between formal runs
 
@@ -97,6 +105,7 @@ llm_benchmark_runner.py      Runs Inspect and extracts benchmark metrics
 system_sampler.py            Samples CPU, GPU, memory, energy, and temperature
 experiment-runner/           Bundled Experiment Runner
 experiments/                 Raw run data, dry runs, baselines, and tables
+data-analysis/               Statistical analysis, plotting scripts, derived data, tables, and figures
 REPORT.md                    Field definitions, formulas, and limitations
 requirements.txt             Project dependencies
 ```

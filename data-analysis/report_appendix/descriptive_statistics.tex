@@ -1,0 +1,659 @@
+\begin{table*}[t]
+\centering
+\small
+\caption{Descriptive statistics: accuracy. SD and variance use ddof=1.}
+\label{tab:desc-accuracy}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{llllllllll}
+\toprule
+Model & Benchmark & Precision & n & Median & Mean & SD & Min & Max & Variance \\
+\midrule
+Gemma 2 9B & MMLU & FP16 & 20 & 66 & 66 & 0 & 66 & 66 & 0 \\
+Gemma 2 9B & MMLU & Q4\_K\_M & 20 & 65 & 65 & 0 & 65 & 65 & 0 \\
+Gemma 2 9B & MMLU-Pro & FP16 & 20 & 49 & 49 & 0 & 49 & 49 & 0 \\
+Gemma 2 9B & MMLU-Pro & Q4\_K\_M & 20 & 49 & 49 & 0 & 49 & 49 & 0 \\
+Gemma 2 9B & RACE-H & FP16 & 20 & 91 & 91 & 0 & 91 & 91 & 0 \\
+Gemma 2 9B & RACE-H & Q4\_K\_M & 20 & 93 & 93 & 0 & 93 & 93 & 0 \\
+Llama 3.1 8B & MMLU & FP16 & 20 & 52 & 52 & 0 & 52 & 52 & 0 \\
+Llama 3.1 8B & MMLU & Q4\_K\_M & 20 & 57 & 57 & 7.29e-15 & 57 & 57 & 5.31e-29 \\
+Llama 3.1 8B & MMLU-Pro & FP16 & 20 & 43 & 43 & 0 & 43 & 43 & 0 \\
+Llama 3.1 8B & MMLU-Pro & Q4\_K\_M & 20 & 48 & 48 & 0 & 48 & 48 & 0 \\
+Llama 3.1 8B & RACE-H & FP16 & 20 & 86 & 86 & 0 & 86 & 86 & 0 \\
+Llama 3.1 8B & RACE-H & Q4\_K\_M & 20 & 86 & 86 & 0 & 86 & 86 & 0 \\
+Qwen 2.5 7B & MMLU & FP16 & 20 & 66 & 66 & 0 & 66 & 66 & 0 \\
+Qwen 2.5 7B & MMLU & Q4\_K\_M & 20 & 61 & 61 & 0 & 61 & 61 & 0 \\
+Qwen 2.5 7B & MMLU-Pro & FP16 & 20 & 52 & 52 & 0 & 52 & 52 & 0 \\
+Qwen 2.5 7B & MMLU-Pro & Q4\_K\_M & 20 & 53 & 53 & 0 & 53 & 53 & 0 \\
+Qwen 2.5 7B & RACE-H & FP16 & 20 & 89 & 89 & 0 & 89 & 89 & 0 \\
+Qwen 2.5 7B & RACE-H & Q4\_K\_M & 20 & 90 & 90 & 0 & 90 & 90 & 0 \\
+\bottomrule
+\end{tabular}
+}
+\end{table*}
+
+\begin{table*}[t]
+\centering
+\small
+\caption{Descriptive statistics: average power w. SD and variance use ddof=1.}
+\label{tab:desc-average_power_w}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{llllllllll}
+\toprule
+Model & Benchmark & Precision & n & Median & Mean & SD & Min & Max & Variance \\
+\midrule
+Gemma 2 9B & MMLU & FP16 & 20 & 264.17 & 265.591 & 9.257 & 249.161 & 279.175 & 85.683 \\
+Gemma 2 9B & MMLU & Q4\_K\_M & 20 & 244.633 & 243.801 & 7.322 & 228.981 & 258.075 & 53.61 \\
+Gemma 2 9B & MMLU-Pro & FP16 & 20 & 320.984 & 321.062 & 0.611 & 319.764 & 322.255 & 0.373 \\
+Gemma 2 9B & MMLU-Pro & Q4\_K\_M & 20 & 338.452 & 338.755 & 1.594 & 336.011 & 341.93 & 2.54 \\
+Gemma 2 9B & RACE-H & FP16 & 20 & 306.286 & 292.86 & 56.577 & 54.403 & 317.162 & 3200.921 \\
+Gemma 2 9B & RACE-H & Q4\_K\_M & 20 & 289.121 & 290.136 & 8.613 & 274.765 & 305.584 & 74.181 \\
+Llama 3.1 8B & MMLU & FP16 & 20 & 257.315 & 256.512 & 6.616 & 246.475 & 272.988 & 43.766 \\
+Llama 3.1 8B & MMLU & Q4\_K\_M & 20 & 237.101 & 236.25 & 8.577 & 220.425 & 253.447 & 73.564 \\
+Llama 3.1 8B & MMLU-Pro & FP16 & 20 & 314.231 & 314.401 & 1.158 & 311.322 & 316.077 & 1.341 \\
+Llama 3.1 8B & MMLU-Pro & Q4\_K\_M & 20 & 354.613 & 354.466 & 1.852 & 351.059 & 357.195 & 3.431 \\
+Llama 3.1 8B & RACE-H & FP16 & 20 & 284.248 & 283.464 & 7.519 & 272.257 & 302.219 & 56.537 \\
+Llama 3.1 8B & RACE-H & Q4\_K\_M & 20 & 280.48 & 281.078 & 11.222 & 258.574 & 298.002 & 125.928 \\
+Qwen 2.5 7B & MMLU & FP16 & 20 & 249.561 & 250.538 & 7.312 & 238.881 & 263.216 & 53.464 \\
+Qwen 2.5 7B & MMLU & Q4\_K\_M & 20 & 223.235 & 223.135 & 9.679 & 205.888 & 238.811 & 93.682 \\
+Qwen 2.5 7B & MMLU-Pro & FP16 & 20 & 331.239 & 331.08 & 0.904 & 329.338 & 332.561 & 0.818 \\
+Qwen 2.5 7B & MMLU-Pro & Q4\_K\_M & 20 & 353.85 & 354.017 & 1.287 & 351.5 & 356.612 & 1.655 \\
+Qwen 2.5 7B & RACE-H & FP16 & 20 & 289.723 & 287.478 & 11.205 & 249.143 & 298.233 & 125.56 \\
+Qwen 2.5 7B & RACE-H & Q4\_K\_M & 20 & 277.135 & 275.911 & 7.75 & 262.044 & 289.096 & 60.059 \\
+\bottomrule
+\end{tabular}
+}
+\end{table*}
+
+\begin{table*}[t]
+\centering
+\small
+\caption{Descriptive statistics: cpu temp end c. SD and variance use ddof=1.}
+\label{tab:desc-cpu_temp_end_c}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{llllllllll}
+\toprule
+Model & Benchmark & Precision & n & Median & Mean & SD & Min & Max & Variance \\
+\midrule
+Gemma 2 9B & MMLU & FP16 & 20 & 62 & 62.15 & 1.843 & 59 & 65 & 3.397 \\
+Gemma 2 9B & MMLU & Q4\_K\_M & 20 & 62 & 61.85 & 1.755 & 58 & 65 & 3.082 \\
+Gemma 2 9B & MMLU-Pro & FP16 & 20 & 70 & 70.2 & 1.642 & 67 & 75 & 2.695 \\
+Gemma 2 9B & MMLU-Pro & Q4\_K\_M & 20 & 70 & 69.75 & 1.943 & 67 & 76 & 3.776 \\
+Gemma 2 9B & RACE-H & FP16 & 20 & 63 & 63.55 & 2.282 & 61 & 68 & 5.208 \\
+Gemma 2 9B & RACE-H & Q4\_K\_M & 20 & 62 & 62.2 & 2.016 & 59 & 69 & 4.063 \\
+Llama 3.1 8B & MMLU & FP16 & 20 & 62 & 62.6 & 1.465 & 60 & 65 & 2.147 \\
+Llama 3.1 8B & MMLU & Q4\_K\_M & 20 & 62 & 62.3 & 1.809 & 60 & 67 & 3.274 \\
+Llama 3.1 8B & MMLU-Pro & FP16 & 20 & 69.5 & 69.9 & 2.469 & 67 & 75 & 6.095 \\
+Llama 3.1 8B & MMLU-Pro & Q4\_K\_M & 20 & 70 & 70.35 & 1.089 & 68 & 73 & 1.187 \\
+Llama 3.1 8B & RACE-H & FP16 & 20 & 62 & 62.1 & 1.832 & 59 & 67 & 3.358 \\
+Llama 3.1 8B & RACE-H & Q4\_K\_M & 20 & 62 & 61.9 & 1.165 & 61 & 66 & 1.358 \\
+Qwen 2.5 7B & MMLU & FP16 & 20 & 62 & 62.35 & 2.323 & 58 & 67 & 5.397 \\
+Qwen 2.5 7B & MMLU & Q4\_K\_M & 20 & 63 & 63.35 & 2.641 & 59 & 72 & 6.976 \\
+Qwen 2.5 7B & MMLU-Pro & FP16 & 20 & 71 & 70.8 & 1.989 & 68 & 74 & 3.958 \\
+Qwen 2.5 7B & MMLU-Pro & Q4\_K\_M & 20 & 71 & 70.95 & 1.932 & 68 & 75 & 3.734 \\
+Qwen 2.5 7B & RACE-H & FP16 & 20 & 62 & 62.7 & 1.75 & 60 & 66 & 3.063 \\
+Qwen 2.5 7B & RACE-H & Q4\_K\_M & 20 & 62 & 62.85 & 2.758 & 58 & 68 & 7.608 \\
+\bottomrule
+\end{tabular}
+}
+\end{table*}
+
+\begin{table*}[t]
+\centering
+\small
+\caption{Descriptive statistics: cpu temp max c. SD and variance use ddof=1.}
+\label{tab:desc-cpu_temp_max_c}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{llllllllll}
+\toprule
+Model & Benchmark & Precision & n & Median & Mean & SD & Min & Max & Variance \\
+\midrule
+Gemma 2 9B & MMLU & FP16 & 20 & 70 & 69.7 & 2.658 & 63 & 74 & 7.063 \\
+Gemma 2 9B & MMLU & Q4\_K\_M & 20 & 67 & 67.8 & 1.989 & 65 & 72 & 3.958 \\
+Gemma 2 9B & MMLU-Pro & FP16 & 20 & 74 & 74.6 & 3.102 & 70 & 84 & 9.621 \\
+Gemma 2 9B & MMLU-Pro & Q4\_K\_M & 20 & 73.5 & 74.3 & 3.114 & 71 & 83 & 9.695 \\
+Gemma 2 9B & RACE-H & FP16 & 20 & 67 & 67.3 & 2.386 & 64 & 73 & 5.695 \\
+Gemma 2 9B & RACE-H & Q4\_K\_M & 20 & 68.5 & 68.95 & 3.692 & 63 & 77 & 13.629 \\
+Llama 3.1 8B & MMLU & FP16 & 20 & 68 & 68.45 & 2.328 & 63 & 72 & 5.418 \\
+Llama 3.1 8B & MMLU & Q4\_K\_M & 20 & 67.5 & 69.05 & 3.379 & 65 & 78 & 11.418 \\
+Llama 3.1 8B & MMLU-Pro & FP16 & 20 & 74 & 74.3 & 2.203 & 71 & 81 & 4.853 \\
+Llama 3.1 8B & MMLU-Pro & Q4\_K\_M & 20 & 73 & 73.2 & 1.824 & 71 & 78 & 3.326 \\
+Llama 3.1 8B & RACE-H & FP16 & 20 & 67.5 & 67.4 & 2.303 & 63 & 71 & 5.305 \\
+Llama 3.1 8B & RACE-H & Q4\_K\_M & 20 & 67.5 & 67.85 & 2.3 & 64 & 71 & 5.292 \\
+Qwen 2.5 7B & MMLU & FP16 & 20 & 67 & 68.2 & 3.302 & 65 & 79 & 10.905 \\
+Qwen 2.5 7B & MMLU & Q4\_K\_M & 20 & 70 & 69.75 & 3.768 & 65 & 78 & 14.197 \\
+Qwen 2.5 7B & MMLU-Pro & FP16 & 20 & 74 & 75.05 & 2.35 & 73 & 81 & 5.524 \\
+Qwen 2.5 7B & MMLU-Pro & Q4\_K\_M & 20 & 73 & 74.1 & 2.1 & 71 & 79 & 4.411 \\
+Qwen 2.5 7B & RACE-H & FP16 & 20 & 67.5 & 68.25 & 2.673 & 64 & 73 & 7.145 \\
+Qwen 2.5 7B & RACE-H & Q4\_K\_M & 20 & 67.5 & 68.1 & 2.15 & 65 & 73 & 4.621 \\
+\bottomrule
+\end{tabular}
+}
+\end{table*}
+
+\begin{table*}[t]
+\centering
+\small
+\caption{Descriptive statistics: cpu temp mean c. SD and variance use ddof=1.}
+\label{tab:desc-cpu_temp_mean_c}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{llllllllll}
+\toprule
+Model & Benchmark & Precision & n & Median & Mean & SD & Min & Max & Variance \\
+\midrule
+Gemma 2 9B & MMLU & FP16 & 20 & 62.55 & 62.455 & 1.122 & 60.526 & 64.27 & 1.258 \\
+Gemma 2 9B & MMLU & Q4\_K\_M & 20 & 62.573 & 62.809 & 0.921 & 61.669 & 64.558 & 0.848 \\
+Gemma 2 9B & MMLU-Pro & FP16 & 20 & 68.027 & 68.078 & 0.527 & 66.7 & 69.204 & 0.277 \\
+Gemma 2 9B & MMLU-Pro & Q4\_K\_M & 20 & 67.162 & 67.339 & 0.94 & 66.019 & 69.029 & 0.883 \\
+Gemma 2 9B & RACE-H & FP16 & 20 & 62.342 & 62.491 & 0.99 & 61.291 & 64.648 & 0.98 \\
+Gemma 2 9B & RACE-H & Q4\_K\_M & 20 & 62.795 & 62.926 & 1.528 & 60.672 & 68.566 & 2.336 \\
+Llama 3.1 8B & MMLU & FP16 & 20 & 62.382 & 62.295 & 1.083 & 60.871 & 64.42 & 1.174 \\
+Llama 3.1 8B & MMLU & Q4\_K\_M & 20 & 62.816 & 63.126 & 1.315 & 61.29 & 66.478 & 1.73 \\
+Llama 3.1 8B & MMLU-Pro & FP16 & 20 & 68.591 & 68.552 & 0.769 & 67.133 & 70.127 & 0.591 \\
+Llama 3.1 8B & MMLU-Pro & Q4\_K\_M & 20 & 67.478 & 67.559 & 0.819 & 66.283 & 68.837 & 0.67 \\
+Llama 3.1 8B & RACE-H & FP16 & 20 & 62.222 & 62.313 & 0.731 & 61.092 & 63.673 & 0.534 \\
+Llama 3.1 8B & RACE-H & Q4\_K\_M & 20 & 62.171 & 62.537 & 0.934 & 61.076 & 63.956 & 0.872 \\
+Qwen 2.5 7B & MMLU & FP16 & 20 & 62.559 & 62.701 & 1.669 & 60.684 & 68.347 & 2.787 \\
+Qwen 2.5 7B & MMLU & Q4\_K\_M & 20 & 63.891 & 63.632 & 1.245 & 61.968 & 65.841 & 1.551 \\
+Qwen 2.5 7B & MMLU-Pro & FP16 & 20 & 69.285 & 69.194 & 0.614 & 67.595 & 70.029 & 0.377 \\
+Qwen 2.5 7B & MMLU-Pro & Q4\_K\_M & 20 & 68.393 & 68.364 & 0.83 & 66.042 & 69.591 & 0.689 \\
+Qwen 2.5 7B & RACE-H & FP16 & 20 & 61.871 & 62.165 & 1.17 & 59.683 & 64.787 & 1.369 \\
+Qwen 2.5 7B & RACE-H & Q4\_K\_M & 20 & 62.405 & 62.82 & 1.443 & 61.399 & 67.847 & 2.084 \\
+\bottomrule
+\end{tabular}
+}
+\end{table*}
+
+\begin{table*}[t]
+\centering
+\small
+\caption{Descriptive statistics: cpu temp start c. SD and variance use ddof=1.}
+\label{tab:desc-cpu_temp_start_c}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{llllllllll}
+\toprule
+Model & Benchmark & Precision & n & Median & Mean & SD & Min & Max & Variance \\
+\midrule
+Gemma 2 9B & MMLU & FP16 & 20 & 65 & 64.55 & 3.154 & 59 & 69 & 9.945 \\
+Gemma 2 9B & MMLU & Q4\_K\_M & 20 & 63 & 63.6 & 2.21 & 61 & 69 & 4.884 \\
+Gemma 2 9B & MMLU-Pro & FP16 & 20 & 63 & 63.75 & 2.337 & 61 & 70 & 5.461 \\
+Gemma 2 9B & MMLU-Pro & Q4\_K\_M & 20 & 65 & 64.7 & 2.003 & 62 & 69 & 4.011 \\
+Gemma 2 9B & RACE-H & FP16 & 20 & 64.5 & 64.9 & 2.732 & 61 & 69 & 7.463 \\
+Gemma 2 9B & RACE-H & Q4\_K\_M & 20 & 64.5 & 64.5 & 1.67 & 62 & 68 & 2.789 \\
+Llama 3.1 8B & MMLU & FP16 & 20 & 65 & 63.5 & 4.628 & 46 & 69 & 21.421 \\
+Llama 3.1 8B & MMLU & Q4\_K\_M & 20 & 63 & 63.55 & 1.731 & 59 & 66 & 2.997 \\
+Llama 3.1 8B & MMLU-Pro & FP16 & 20 & 65 & 64.9 & 2.469 & 60 & 70 & 6.095 \\
+Llama 3.1 8B & MMLU-Pro & Q4\_K\_M & 20 & 63 & 63.75 & 1.585 & 61 & 66 & 2.513 \\
+Llama 3.1 8B & RACE-H & FP16 & 20 & 64 & 64.45 & 1.791 & 62 & 69 & 3.208 \\
+Llama 3.1 8B & RACE-H & Q4\_K\_M & 20 & 65 & 64.5 & 1.762 & 62 & 67 & 3.105 \\
+Qwen 2.5 7B & MMLU & FP16 & 20 & 65 & 64.55 & 2.259 & 61 & 69 & 5.103 \\
+Qwen 2.5 7B & MMLU & Q4\_K\_M & 20 & 65 & 64.9 & 2.292 & 62 & 70 & 5.253 \\
+Qwen 2.5 7B & MMLU-Pro & FP16 & 20 & 65 & 64.1 & 4.887 & 45 & 70 & 23.884 \\
+Qwen 2.5 7B & MMLU-Pro & Q4\_K\_M & 20 & 64 & 63.9 & 2.198 & 58 & 67 & 4.832 \\
+Qwen 2.5 7B & RACE-H & FP16 & 20 & 65 & 64.5 & 2.236 & 60 & 67 & 5 \\
+Qwen 2.5 7B & RACE-H & Q4\_K\_M & 20 & 65 & 64.65 & 2.134 & 62 & 72 & 4.555 \\
+\bottomrule
+\end{tabular}
+}
+\end{table*}
+
+\begin{table*}[t]
+\centering
+\small
+\caption{Descriptive statistics: cpu utilization pct. SD and variance use ddof=1.}
+\label{tab:desc-cpu_utilization_pct}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{llllllllll}
+\toprule
+Model & Benchmark & Precision & n & Median & Mean & SD & Min & Max & Variance \\
+\midrule
+Gemma 2 9B & MMLU & FP16 & 20 & 7.024 & 7.024 & 0.043 & 6.925 & 7.092 & 0.002 \\
+Gemma 2 9B & MMLU & Q4\_K\_M & 20 & 7.118 & 7.133 & 0.065 & 7.045 & 7.299 & 0.004 \\
+Gemma 2 9B & MMLU-Pro & FP16 & 20 & 6.823 & 6.823 & 0.013 & 6.799 & 6.85 & 0.000161 \\
+Gemma 2 9B & MMLU-Pro & Q4\_K\_M & 20 & 6.85 & 6.85 & 0.014 & 6.821 & 6.872 & 0.000208 \\
+Gemma 2 9B & RACE-H & FP16 & 20 & 7.047 & 7.074 & 0.13 & 6.963 & 7.587 & 0.017 \\
+Gemma 2 9B & RACE-H & Q4\_K\_M & 20 & 7.101 & 7.097 & 0.046 & 6.976 & 7.188 & 0.002 \\
+Llama 3.1 8B & MMLU & FP16 & 20 & 7.005 & 7.014 & 0.047 & 6.944 & 7.115 & 0.002 \\
+Llama 3.1 8B & MMLU & Q4\_K\_M & 20 & 7.178 & 7.186 & 0.053 & 7.113 & 7.301 & 0.003 \\
+Llama 3.1 8B & MMLU-Pro & FP16 & 20 & 6.817 & 6.819 & 0.013 & 6.792 & 6.854 & 0.000157 \\
+Llama 3.1 8B & MMLU-Pro & Q4\_K\_M & 20 & 6.862 & 6.862 & 0.014 & 6.841 & 6.895 & 0.000205 \\
+Llama 3.1 8B & RACE-H & FP16 & 20 & 7.073 & 7.083 & 0.048 & 7.013 & 7.212 & 0.002 \\
+Llama 3.1 8B & RACE-H & Q4\_K\_M & 20 & 7.164 & 7.137 & 0.147 & 6.575 & 7.278 & 0.022 \\
+Qwen 2.5 7B & MMLU & FP16 & 20 & 7.063 & 7.073 & 0.047 & 7.009 & 7.145 & 0.002 \\
+Qwen 2.5 7B & MMLU & Q4\_K\_M & 20 & 7.178 & 7.179 & 0.057 & 7.096 & 7.272 & 0.003 \\
+Qwen 2.5 7B & MMLU-Pro & FP16 & 20 & 6.819 & 6.821 & 0.015 & 6.792 & 6.847 & 0.000234 \\
+Qwen 2.5 7B & MMLU-Pro & Q4\_K\_M & 20 & 6.86 & 6.858 & 0.015 & 6.832 & 6.888 & 0.000238 \\
+Qwen 2.5 7B & RACE-H & FP16 & 20 & 7.09 & 7.067 & 0.121 & 6.598 & 7.168 & 0.015 \\
+Qwen 2.5 7B & RACE-H & Q4\_K\_M & 20 & 7.124 & 7.14 & 0.066 & 7.037 & 7.306 & 0.004 \\
+\bottomrule
+\end{tabular}
+}
+\end{table*}
+
+\begin{table*}[t]
+\centering
+\small
+\caption{Descriptive statistics: gpu temp end c. SD and variance use ddof=1.}
+\label{tab:desc-gpu_temp_end_c}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{llllllllll}
+\toprule
+Model & Benchmark & Precision & n & Median & Mean & SD & Min & Max & Variance \\
+\midrule
+Gemma 2 9B & MMLU & FP16 & 20 & 45.5 & 45.55 & 1.191 & 44 & 47 & 1.418 \\
+Gemma 2 9B & MMLU & Q4\_K\_M & 20 & 45 & 44.6 & 1.046 & 43 & 46 & 1.095 \\
+Gemma 2 9B & MMLU-Pro & FP16 & 20 & 50 & 50 & 0 & 50 & 50 & 0 \\
+Gemma 2 9B & MMLU-Pro & Q4\_K\_M & 20 & 50 & 50.05 & 0.394 & 49 & 51 & 0.155 \\
+Gemma 2 9B & RACE-H & FP16 & 20 & 47 & 46.6 & 1.569 & 41 & 48 & 2.463 \\
+Gemma 2 9B & RACE-H & Q4\_K\_M & 20 & 47 & 46.55 & 1.146 & 44 & 49 & 1.313 \\
+Llama 3.1 8B & MMLU & FP16 & 20 & 45.5 & 45.45 & 1.317 & 43 & 47 & 1.734 \\
+Llama 3.1 8B & MMLU & Q4\_K\_M & 20 & 45 & 44.65 & 1.089 & 43 & 46 & 1.187 \\
+Llama 3.1 8B & MMLU-Pro & FP16 & 20 & 50 & 50 & 0 & 50 & 50 & 0 \\
+Llama 3.1 8B & MMLU-Pro & Q4\_K\_M & 20 & 50 & 50.4 & 0.503 & 50 & 51 & 0.253 \\
+Llama 3.1 8B & RACE-H & FP16 & 20 & 46 & 46 & 0.973 & 44 & 48 & 0.947 \\
+Llama 3.1 8B & RACE-H & Q4\_K\_M & 20 & 46 & 45.9 & 1.119 & 44 & 47 & 1.253 \\
+Qwen 2.5 7B & MMLU & FP16 & 20 & 45 & 45.3 & 1.218 & 43 & 48 & 1.484 \\
+Qwen 2.5 7B & MMLU & Q4\_K\_M & 20 & 45 & 45.2 & 0.894 & 43 & 46 & 0.8 \\
+Qwen 2.5 7B & MMLU-Pro & FP16 & 20 & 50 & 50.25 & 0.444 & 50 & 51 & 0.197 \\
+Qwen 2.5 7B & MMLU-Pro & Q4\_K\_M & 20 & 50 & 50.3 & 0.47 & 50 & 51 & 0.221 \\
+Qwen 2.5 7B & RACE-H & FP16 & 20 & 46 & 45.9 & 1.294 & 44 & 48 & 1.674 \\
+Qwen 2.5 7B & RACE-H & Q4\_K\_M & 20 & 46 & 45.6 & 1.501 & 43 & 49 & 2.253 \\
+\bottomrule
+\end{tabular}
+}
+\end{table*}
+
+\begin{table*}[t]
+\centering
+\small
+\caption{Descriptive statistics: gpu temp max c. SD and variance use ddof=1.}
+\label{tab:desc-gpu_temp_max_c}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{llllllllll}
+\toprule
+Model & Benchmark & Precision & n & Median & Mean & SD & Min & Max & Variance \\
+\midrule
+Gemma 2 9B & MMLU & FP16 & 20 & 59 & 58.65 & 1.424 & 56 & 61 & 2.029 \\
+Gemma 2 9B & MMLU & Q4\_K\_M & 20 & 59 & 58.75 & 1.682 & 56 & 62 & 2.829 \\
+Gemma 2 9B & MMLU-Pro & FP16 & 20 & 64.5 & 64.55 & 0.759 & 63 & 66 & 0.576 \\
+Gemma 2 9B & MMLU-Pro & Q4\_K\_M & 20 & 65 & 65.25 & 0.967 & 63 & 67 & 0.934 \\
+Gemma 2 9B & RACE-H & FP16 & 20 & 62 & 61.55 & 4.478 & 43 & 64 & 20.05 \\
+Gemma 2 9B & RACE-H & Q4\_K\_M & 20 & 63.5 & 63.1 & 1.334 & 61 & 66 & 1.779 \\
+Llama 3.1 8B & MMLU & FP16 & 20 & 57 & 57.15 & 1.694 & 55 & 60 & 2.871 \\
+Llama 3.1 8B & MMLU & Q4\_K\_M & 20 & 58 & 57.75 & 1.41 & 55 & 60 & 1.987 \\
+Llama 3.1 8B & MMLU-Pro & FP16 & 20 & 63 & 63.35 & 1.531 & 60 & 66 & 2.345 \\
+Llama 3.1 8B & MMLU-Pro & Q4\_K\_M & 20 & 65 & 64.7 & 1.031 & 63 & 66 & 1.063 \\
+Llama 3.1 8B & RACE-H & FP16 & 20 & 61 & 60.85 & 1.04 & 59 & 63 & 1.082 \\
+Llama 3.1 8B & RACE-H & Q4\_K\_M & 20 & 62 & 62.1 & 1.252 & 60 & 64 & 1.568 \\
+Qwen 2.5 7B & MMLU & FP16 & 20 & 58 & 57.95 & 1.791 & 55 & 61 & 3.208 \\
+Qwen 2.5 7B & MMLU & Q4\_K\_M & 20 & 57 & 57.45 & 1.432 & 55 & 61 & 2.05 \\
+Qwen 2.5 7B & MMLU-Pro & FP16 & 20 & 65 & 64.55 & 0.759 & 63 & 66 & 0.576 \\
+Qwen 2.5 7B & MMLU-Pro & Q4\_K\_M & 20 & 64.5 & 64.45 & 1.099 & 63 & 66 & 1.208 \\
+Qwen 2.5 7B & RACE-H & FP16 & 20 & 61 & 61 & 1.522 & 58 & 63 & 2.316 \\
+Qwen 2.5 7B & RACE-H & Q4\_K\_M & 20 & 61 & 61.35 & 1.496 & 59 & 65 & 2.239 \\
+\bottomrule
+\end{tabular}
+}
+\end{table*}
+
+\begin{table*}[t]
+\centering
+\small
+\caption{Descriptive statistics: gpu temp mean c. SD and variance use ddof=1.}
+\label{tab:desc-gpu_temp_mean_c}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{llllllllll}
+\toprule
+Model & Benchmark & Precision & n & Median & Mean & SD & Min & Max & Variance \\
+\midrule
+Gemma 2 9B & MMLU & FP16 & 20 & 49.885 & 49.955 & 1.14 & 48.158 & 51.552 & 1.301 \\
+Gemma 2 9B & MMLU & Q4\_K\_M & 20 & 48.919 & 48.722 & 1.196 & 46.487 & 50.519 & 1.431 \\
+Gemma 2 9B & MMLU-Pro & FP16 & 20 & 57.813 & 57.797 & 0.291 & 57.309 & 58.526 & 0.085 \\
+Gemma 2 9B & MMLU-Pro & Q4\_K\_M & 20 & 59.601 & 59.484 & 0.517 & 58.435 & 60.219 & 0.267 \\
+Gemma 2 9B & RACE-H & FP16 & 20 & 52.981 & 52.501 & 2.855 & 41.105 & 54.631 & 8.151 \\
+Gemma 2 9B & RACE-H & Q4\_K\_M & 20 & 53.569 & 53.465 & 1.457 & 50.677 & 57.308 & 2.122 \\
+Llama 3.1 8B & MMLU & FP16 & 20 & 49.69 & 49.333 & 1.286 & 47.067 & 50.899 & 1.654 \\
+Llama 3.1 8B & MMLU & Q4\_K\_M & 20 & 48.486 & 48.481 & 1.087 & 46.848 & 50.021 & 1.181 \\
+Llama 3.1 8B & MMLU-Pro & FP16 & 20 & 57.184 & 57.149 & 0.388 & 56.581 & 57.618 & 0.15 \\
+Llama 3.1 8B & MMLU-Pro & Q4\_K\_M & 20 & 60.349 & 60.349 & 0.482 & 59.341 & 60.992 & 0.232 \\
+Llama 3.1 8B & RACE-H & FP16 & 20 & 51.321 & 51.31 & 1.044 & 49.408 & 52.854 & 1.091 \\
+Llama 3.1 8B & RACE-H & Q4\_K\_M & 20 & 52.604 & 52.056 & 1.387 & 48.739 & 53.722 & 1.924 \\
+Qwen 2.5 7B & MMLU & FP16 & 20 & 49.186 & 49.093 & 1.41 & 46.491 & 52.733 & 1.989 \\
+Qwen 2.5 7B & MMLU & Q4\_K\_M & 20 & 48.361 & 48.198 & 0.788 & 46.413 & 49.119 & 0.622 \\
+Qwen 2.5 7B & MMLU-Pro & FP16 & 20 & 58.593 & 58.561 & 0.166 & 58.288 & 58.91 & 0.027 \\
+Qwen 2.5 7B & MMLU-Pro & Q4\_K\_M & 20 & 60.793 & 60.696 & 0.373 & 59.788 & 61.174 & 0.139 \\
+Qwen 2.5 7B & RACE-H & FP16 & 20 & 51.395 & 51.363 & 1.293 & 49.256 & 53.458 & 1.671 \\
+Qwen 2.5 7B & RACE-H & Q4\_K\_M & 20 & 51.744 & 51.588 & 1.627 & 48.873 & 56.115 & 2.648 \\
+\bottomrule
+\end{tabular}
+}
+\end{table*}
+
+\begin{table*}[t]
+\centering
+\small
+\caption{Descriptive statistics: gpu temp start c. SD and variance use ddof=1.}
+\label{tab:desc-gpu_temp_start_c}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{llllllllll}
+\toprule
+Model & Benchmark & Precision & n & Median & Mean & SD & Min & Max & Variance \\
+\midrule
+Gemma 2 9B & MMLU & FP16 & 20 & 42 & 42.55 & 1.146 & 41 & 44 & 1.313 \\
+Gemma 2 9B & MMLU & Q4\_K\_M & 20 & 42 & 42.15 & 1.182 & 40 & 44 & 1.397 \\
+Gemma 2 9B & MMLU-Pro & FP16 & 20 & 43 & 43.05 & 1.761 & 41 & 49 & 3.103 \\
+Gemma 2 9B & MMLU-Pro & Q4\_K\_M & 20 & 43 & 42.6 & 1.392 & 40 & 44 & 1.937 \\
+Gemma 2 9B & RACE-H & FP16 & 20 & 43 & 42.9 & 0.912 & 41 & 44 & 0.832 \\
+Gemma 2 9B & RACE-H & Q4\_K\_M & 20 & 42.5 & 42.8 & 1.824 & 40 & 49 & 3.326 \\
+Llama 3.1 8B & MMLU & FP16 & 20 & 42.5 & 41.9 & 1.21 & 40 & 43 & 1.463 \\
+Llama 3.1 8B & MMLU & Q4\_K\_M & 20 & 42 & 42 & 1.076 & 40 & 44 & 1.158 \\
+Llama 3.1 8B & MMLU-Pro & FP16 & 20 & 41.5 & 42.05 & 1.905 & 40 & 48 & 3.629 \\
+Llama 3.1 8B & MMLU-Pro & Q4\_K\_M & 20 & 41.5 & 41.65 & 1.309 & 39 & 43 & 1.713 \\
+Llama 3.1 8B & RACE-H & FP16 & 20 & 42 & 41.85 & 0.933 & 40 & 43 & 0.871 \\
+Llama 3.1 8B & RACE-H & Q4\_K\_M & 20 & 42.5 & 42.15 & 1.182 & 40 & 44 & 1.397 \\
+Qwen 2.5 7B & MMLU & FP16 & 20 & 43 & 42.85 & 1.981 & 40 & 49 & 3.924 \\
+Qwen 2.5 7B & MMLU & Q4\_K\_M & 20 & 43 & 42.75 & 0.91 & 41 & 44 & 0.829 \\
+Qwen 2.5 7B & MMLU-Pro & FP16 & 20 & 43 & 42.5 & 1.235 & 41 & 44 & 1.526 \\
+Qwen 2.5 7B & MMLU-Pro & Q4\_K\_M & 20 & 42 & 41.55 & 1.234 & 40 & 43 & 1.524 \\
+Qwen 2.5 7B & RACE-H & FP16 & 20 & 42 & 42.2 & 1.281 & 40 & 44 & 1.642 \\
+Qwen 2.5 7B & RACE-H & Q4\_K\_M & 20 & 42 & 41.95 & 1.932 & 40 & 48 & 3.734 \\
+\bottomrule
+\end{tabular}
+}
+\end{table*}
+
+\begin{table*}[t]
+\centering
+\small
+\caption{Descriptive statistics: gpu utilization pct. SD and variance use ddof=1.}
+\label{tab:desc-gpu_utilization_pct}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{llllllllll}
+\toprule
+Model & Benchmark & Precision & n & Median & Mean & SD & Min & Max & Variance \\
+\midrule
+Gemma 2 9B & MMLU & FP16 & 20 & 60.502 & 60.543 & 0.399 & 59.418 & 61.123 & 0.159 \\
+Gemma 2 9B & MMLU & Q4\_K\_M & 20 & 41.532 & 41.479 & 0.315 & 40.84 & 42.138 & 0.099 \\
+Gemma 2 9B & MMLU-Pro & FP16 & 20 & 92.571 & 92.571 & 0.025 & 92.536 & 92.62 & 0.000637 \\
+Gemma 2 9B & MMLU-Pro & Q4\_K\_M & 20 & 83.373 & 83.381 & 0.06 & 83.277 & 83.492 & 0.004 \\
+Gemma 2 9B & RACE-H & FP16 & 20 & 65.561 & 62.497 & 14.019 & 2.947 & 66.037 & 196.529 \\
+Gemma 2 9B & RACE-H & Q4\_K\_M & 20 & 52.677 & 52.763 & 0.318 & 52.293 & 53.477 & 0.101 \\
+Llama 3.1 8B & MMLU & FP16 & 20 & 62.535 & 62.603 & 0.202 & 62.241 & 63.034 & 0.041 \\
+Llama 3.1 8B & MMLU & Q4\_K\_M & 20 & 37.254 & 37.16 & 0.237 & 36.721 & 37.428 & 0.056 \\
+Llama 3.1 8B & MMLU-Pro & FP16 & 20 & 94.718 & 94.713 & 0.028 & 94.617 & 94.744 & 0.000806 \\
+Llama 3.1 8B & MMLU-Pro & Q4\_K\_M & 20 & 87.203 & 87.198 & 0.055 & 87.086 & 87.295 & 0.003 \\
+Llama 3.1 8B & RACE-H & FP16 & 20 & 58.3 & 58.301 & 0.3 & 57.952 & 58.888 & 0.09 \\
+Llama 3.1 8B & RACE-H & Q4\_K\_M & 20 & 46.009 & 45.431 & 1.625 & 38.691 & 46.222 & 2.642 \\
+Qwen 2.5 7B & MMLU & FP16 & 20 & 50.387 & 50.345 & 0.309 & 49.977 & 50.867 & 0.095 \\
+Qwen 2.5 7B & MMLU & Q4\_K\_M & 20 & 31.996 & 31.912 & 0.238 & 31.492 & 32.317 & 0.056 \\
+Qwen 2.5 7B & MMLU-Pro & FP16 & 20 & 94.409 & 94.404 & 0.02 & 94.376 & 94.433 & 0.000381 \\
+Qwen 2.5 7B & MMLU-Pro & Q4\_K\_M & 20 & 86.669 & 86.667 & 0.042 & 86.564 & 86.733 & 0.002 \\
+Qwen 2.5 7B & RACE-H & FP16 & 20 & 56.485 & 56.207 & 1.682 & 49.112 & 56.95 & 2.831 \\
+Qwen 2.5 7B & RACE-H & Q4\_K\_M & 20 & 44.481 & 44.629 & 0.34 & 43.837 & 45.329 & 0.116 \\
+\bottomrule
+\end{tabular}
+}
+\end{table*}
+
+\begin{table*}[t]
+\centering
+\small
+\caption{Descriptive statistics: inference time s. SD and variance use ddof=1.}
+\label{tab:desc-inference_time_s}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{llllllllll}
+\toprule
+Model & Benchmark & Precision & n & Median & Mean & SD & Min & Max & Variance \\
+\midrule
+Gemma 2 9B & MMLU & FP16 & 20 & 18 & 18.05 & 0.224 & 18 & 19 & 0.05 \\
+Gemma 2 9B & MMLU & Q4\_K\_M & 20 & 11 & 10.7 & 0.47 & 10 & 11 & 0.221 \\
+Gemma 2 9B & MMLU-Pro & FP16 & 20 & 508 & 507.95 & 0.224 & 507 & 508 & 0.05 \\
+Gemma 2 9B & MMLU-Pro & Q4\_K\_M & 20 & 217 & 216.6 & 0.503 & 216 & 217 & 0.253 \\
+Gemma 2 9B & RACE-H & FP16 & 20 & 22 & 22.15 & 0.366 & 22 & 23 & 0.134 \\
+Gemma 2 9B & RACE-H & Q4\_K\_M & 20 & 15 & 15.2 & 0.41 & 15 & 16 & 0.168 \\
+Llama 3.1 8B & MMLU & FP16 & 20 & 19 & 19.1 & 0.308 & 19 & 20 & 0.095 \\
+Llama 3.1 8B & MMLU & Q4\_K\_M & 20 & 9 & 9.1 & 0.308 & 9 & 10 & 0.095 \\
+Llama 3.1 8B & MMLU-Pro & FP16 & 20 & 617 & 616.9 & 0.308 & 616 & 617 & 0.095 \\
+Llama 3.1 8B & MMLU-Pro & Q4\_K\_M & 20 & 223 & 222.8 & 0.41 & 222 & 223 & 0.168 \\
+Llama 3.1 8B & RACE-H & FP16 & 20 & 16 & 16.1 & 0.308 & 16 & 17 & 0.095 \\
+Llama 3.1 8B & RACE-H & Q4\_K\_M & 20 & 11 & 11.15 & 0.366 & 11 & 12 & 0.134 \\
+Qwen 2.5 7B & MMLU & FP16 & 20 & 13 & 12.65 & 0.489 & 12 & 13 & 0.239 \\
+Qwen 2.5 7B & MMLU & Q4\_K\_M & 20 & 8 & 7.9 & 0.308 & 7 & 8 & 0.095 \\
+Qwen 2.5 7B & MMLU-Pro & FP16 & 20 & 758 & 757.6 & 0.503 & 757 & 758 & 0.253 \\
+Qwen 2.5 7B & MMLU-Pro & Q4\_K\_M & 20 & 316 & 316.1 & 0.308 & 316 & 317 & 0.095 \\
+Qwen 2.5 7B & RACE-H & FP16 & 20 & 15.5 & 15.5 & 0.513 & 15 & 16 & 0.263 \\
+Qwen 2.5 7B & RACE-H & Q4\_K\_M & 20 & 11 & 11.05 & 0.224 & 11 & 12 & 0.05 \\
+\bottomrule
+\end{tabular}
+}
+\end{table*}
+
+\begin{table*}[t]
+\centering
+\small
+\caption{Descriptive statistics: output tokens. SD and variance use ddof=1.}
+\label{tab:desc-output_tokens}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{llllllllll}
+\toprule
+Model & Benchmark & Precision & n & Median & Mean & SD & Min & Max & Variance \\
+\midrule
+Gemma 2 9B & MMLU & FP16 & 20 & 595 & 595 & 0 & 595 & 595 & 0 \\
+Gemma 2 9B & MMLU & Q4\_K\_M & 20 & 591 & 591 & 0 & 591 & 591 & 0 \\
+Gemma 2 9B & MMLU-Pro & FP16 & 20 & 21752 & 21752 & 0 & 21752 & 21752 & 0 \\
+Gemma 2 9B & MMLU-Pro & Q4\_K\_M & 20 & 20933 & 20933 & 0 & 20933 & 20933 & 0 \\
+Gemma 2 9B & RACE-H & FP16 & 20 & 600 & 600 & 0 & 600 & 600 & 0 \\
+Gemma 2 9B & RACE-H & Q4\_K\_M & 20 & 600 & 600 & 0 & 600 & 600 & 0 \\
+Llama 3.1 8B & MMLU & FP16 & 20 & 833 & 833 & 0 & 833 & 833 & 0 \\
+Llama 3.1 8B & MMLU & Q4\_K\_M & 20 & 643 & 643 & 0 & 643 & 643 & 0 \\
+Llama 3.1 8B & MMLU-Pro & FP16 & 20 & 34142 & 34142 & 0 & 34142 & 34142 & 0 \\
+Llama 3.1 8B & MMLU-Pro & Q4\_K\_M & 20 & 30000 & 30000 & 0 & 30000 & 30000 & 0 \\
+Llama 3.1 8B & RACE-H & FP16 & 20 & 500 & 500 & 0 & 500 & 500 & 0 \\
+Llama 3.1 8B & RACE-H & Q4\_K\_M & 20 & 500 & 500 & 0 & 500 & 500 & 0 \\
+Qwen 2.5 7B & MMLU & FP16 & 20 & 500 & 500 & 0 & 500 & 500 & 0 \\
+Qwen 2.5 7B & MMLU & Q4\_K\_M & 20 & 500 & 500 & 0 & 500 & 500 & 0 \\
+Qwen 2.5 7B & MMLU-Pro & FP16 & 20 & 44331 & 44331 & 0 & 44331 & 44331 & 0 \\
+Qwen 2.5 7B & MMLU-Pro & Q4\_K\_M & 20 & 44559 & 44559 & 0 & 44559 & 44559 & 0 \\
+Qwen 2.5 7B & RACE-H & FP16 & 20 & 500 & 500 & 0 & 500 & 500 & 0 \\
+Qwen 2.5 7B & RACE-H & Q4\_K\_M & 20 & 500 & 500 & 0 & 500 & 500 & 0 \\
+\bottomrule
+\end{tabular}
+}
+\end{table*}
+
+\begin{table*}[t]
+\centering
+\small
+\caption{Descriptive statistics: peak gpu memory mb. SD and variance use ddof=1.}
+\label{tab:desc-peak_gpu_memory_mb}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{llllllllll}
+\toprule
+Model & Benchmark & Precision & n & Median & Mean & SD & Min & Max & Variance \\
+\midrule
+Gemma 2 9B & MMLU & FP16 & 20 & 21617.188 & 21617.088 & 0.447 & 21615.188 & 21617.188 & 0.2 \\
+Gemma 2 9B & MMLU & Q4\_K\_M & 20 & 9521.188 & 9520.987 & 0.616 & 9519.188 & 9521.188 & 0.379 \\
+Gemma 2 9B & MMLU-Pro & FP16 & 20 & 21617.188 & 21617.188 & 0 & 21617.188 & 21617.188 & 0 \\
+Gemma 2 9B & MMLU-Pro & Q4\_K\_M & 20 & 9521.188 & 9521.188 & 0 & 9521.188 & 9521.188 & 0 \\
+Gemma 2 9B & RACE-H & FP16 & 20 & 21619.188 & 21618.287 & 4.025 & 21601.188 & 21619.188 & 16.2 \\
+Gemma 2 9B & RACE-H & Q4\_K\_M & 20 & 9523.188 & 9523.188 & 0 & 9523.188 & 9523.188 & 0 \\
+Llama 3.1 8B & MMLU & FP16 & 20 & 16691.188 & 16690.588 & 0.94 & 16689.188 & 16691.188 & 0.884 \\
+Llama 3.1 8B & MMLU & Q4\_K\_M & 20 & 6825.188 & 6825.188 & 0 & 6825.188 & 6825.188 & 0 \\
+Llama 3.1 8B & MMLU-Pro & FP16 & 20 & 16689.188 & 16689.188 & 0 & 16689.188 & 16689.188 & 0 \\
+Llama 3.1 8B & MMLU-Pro & Q4\_K\_M & 20 & 6823.188 & 6823.188 & 0 & 6823.188 & 6823.188 & 0 \\
+Llama 3.1 8B & RACE-H & FP16 & 20 & 16697.188 & 16697.188 & 0 & 16697.188 & 16697.188 & 0 \\
+Llama 3.1 8B & RACE-H & Q4\_K\_M & 20 & 6831.188 & 6831.188 & 0 & 6831.188 & 6831.188 & 0 \\
+Qwen 2.5 7B & MMLU & FP16 & 20 & 15221.188 & 15220.888 & 0.733 & 15219.188 & 15221.188 & 0.537 \\
+Qwen 2.5 7B & MMLU & Q4\_K\_M & 20 & 5947.188 & 5946.988 & 0.616 & 5945.188 & 5947.188 & 0.379 \\
+Qwen 2.5 7B & MMLU-Pro & FP16 & 20 & 15219.188 & 15219.188 & 0 & 15219.188 & 15219.188 & 0 \\
+Qwen 2.5 7B & MMLU-Pro & Q4\_K\_M & 20 & 5945.188 & 5945.188 & 0 & 5945.188 & 5945.188 & 0 \\
+Qwen 2.5 7B & RACE-H & FP16 & 20 & 15223.188 & 15223.188 & 0 & 15223.188 & 15223.188 & 0 \\
+Qwen 2.5 7B & RACE-H & Q4\_K\_M & 20 & 5951.188 & 5951.188 & 0 & 5951.188 & 5951.188 & 0 \\
+\bottomrule
+\end{tabular}
+}
+\end{table*}
+
+\begin{table*}[t]
+\centering
+\small
+\caption{Descriptive statistics: peak ram mb. SD and variance use ddof=1.}
+\label{tab:desc-peak_ram_mb}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{llllllllll}
+\toprule
+Model & Benchmark & Precision & n & Median & Mean & SD & Min & Max & Variance \\
+\midrule
+Gemma 2 9B & MMLU & FP16 & 20 & 4491.457 & 4474.383 & 77.529 & 4297.605 & 4578.738 & 6010.714 \\
+Gemma 2 9B & MMLU & Q4\_K\_M & 20 & 3425.223 & 3421.112 & 67.865 & 3276.93 & 3523.531 & 4605.712 \\
+Gemma 2 9B & MMLU-Pro & FP16 & 20 & 4522.732 & 4493.361 & 81.523 & 4334.789 & 4605.43 & 6646.063 \\
+Gemma 2 9B & MMLU-Pro & Q4\_K\_M & 20 & 3442.777 & 3446.955 & 77.459 & 3319.656 & 3554.242 & 5999.872 \\
+Gemma 2 9B & RACE-H & FP16 & 20 & 4379.441 & 4375.91 & 78.837 & 4198.57 & 4501.191 & 6215.347 \\
+Gemma 2 9B & RACE-H & Q4\_K\_M & 20 & 3428.229 & 3402.89 & 97.443 & 3257.738 & 3559.688 & 9495.115 \\
+Llama 3.1 8B & MMLU & FP16 & 20 & 3646.703 & 3607.479 & 75.076 & 3448.457 & 3701.551 & 5636.473 \\
+Llama 3.1 8B & MMLU & Q4\_K\_M & 20 & 2914.34 & 2900.686 & 80.064 & 2745.473 & 3011.324 & 6410.197 \\
+Llama 3.1 8B & MMLU-Pro & FP16 & 20 & 3640.637 & 3623.837 & 85.302 & 3469.258 & 3739.629 & 7276.457 \\
+Llama 3.1 8B & MMLU-Pro & Q4\_K\_M & 20 & 2992.676 & 2944.844 & 81.097 & 2769.316 & 3013.676 & 6576.686 \\
+Llama 3.1 8B & RACE-H & FP16 & 20 & 3611.377 & 3597.17 & 84.689 & 3445.762 & 3729.035 & 7172.147 \\
+Llama 3.1 8B & RACE-H & Q4\_K\_M & 20 & 2952.256 & 2909.556 & 81.911 & 2766.734 & 3027.539 & 6709.475 \\
+Qwen 2.5 7B & MMLU & FP16 & 20 & 3718.561 & 3682.448 & 79.053 & 3499.07 & 3775.414 & 6249.394 \\
+Qwen 2.5 7B & MMLU & Q4\_K\_M & 20 & 2984.254 & 2940.475 & 88.578 & 2756.926 & 3044.828 & 7846.065 \\
+Qwen 2.5 7B & MMLU-Pro & FP16 & 20 & 3701.375 & 3655.769 & 85.465 & 3516.117 & 3740.875 & 7304.218 \\
+Qwen 2.5 7B & MMLU-Pro & Q4\_K\_M & 20 & 2922.734 & 2919.063 & 77.824 & 2788.984 & 3030.977 & 6056.621 \\
+Qwen 2.5 7B & RACE-H & FP16 & 20 & 3664.938 & 3622.492 & 90.519 & 3452.902 & 3753.48 & 8193.65 \\
+Qwen 2.5 7B & RACE-H & Q4\_K\_M & 20 & 2947.781 & 2905.395 & 82.653 & 2736.727 & 3004.688 & 6831.464 \\
+\bottomrule
+\end{tabular}
+}
+\end{table*}
+
+\begin{table*}[t]
+\centering
+\small
+\caption{Descriptive statistics: run time s. SD and variance use ddof=1.}
+\label{tab:desc-run_time_s}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{llllllllll}
+\toprule
+Model & Benchmark & Precision & n & Median & Mean & SD & Min & Max & Variance \\
+\midrule
+Gemma 2 9B & MMLU & FP16 & 20 & 21.616 & 21.611 & 0.073 & 21.459 & 21.771 & 0.005 \\
+Gemma 2 9B & MMLU & Q4\_K\_M & 20 & 14.1 & 14.1 & 0.062 & 13.964 & 14.194 & 0.004 \\
+Gemma 2 9B & MMLU-Pro & FP16 & 20 & 511.124 & 511.119 & 0.088 & 510.928 & 511.268 & 0.008 \\
+Gemma 2 9B & MMLU-Pro & Q4\_K\_M & 20 & 219.91 & 219.912 & 0.096 & 219.725 & 220.063 & 0.009 \\
+Gemma 2 9B & RACE-H & FP16 & 20 & 25.569 & 25.578 & 0.06 & 25.487 & 25.681 & 0.004 \\
+Gemma 2 9B & RACE-H & Q4\_K\_M & 20 & 18.426 & 18.43 & 0.058 & 18.339 & 18.513 & 0.003 \\
+Llama 3.1 8B & MMLU & FP16 & 20 & 22.629 & 22.635 & 0.078 & 22.491 & 22.82 & 0.006 \\
+Llama 3.1 8B & MMLU & Q4\_K\_M & 20 & 12.531 & 12.533 & 0.065 & 12.438 & 12.696 & 0.004 \\
+Llama 3.1 8B & MMLU-Pro & FP16 & 20 & 620.228 & 620.264 & 0.172 & 620.11 & 620.92 & 0.03 \\
+Llama 3.1 8B & MMLU-Pro & Q4\_K\_M & 20 & 226.029 & 226.041 & 0.095 & 225.924 & 226.347 & 0.009 \\
+Llama 3.1 8B & RACE-H & FP16 & 20 & 19.365 & 19.365 & 0.068 & 19.26 & 19.516 & 0.005 \\
+Llama 3.1 8B & RACE-H & Q4\_K\_M & 20 & 14.556 & 14.71 & 0.674 & 14.469 & 17.552 & 0.454 \\
+Qwen 2.5 7B & MMLU & FP16 & 20 & 16.158 & 16.167 & 0.078 & 16.047 & 16.274 & 0.006 \\
+Qwen 2.5 7B & MMLU & Q4\_K\_M & 20 & 11.323 & 11.336 & 0.081 & 11.206 & 11.523 & 0.007 \\
+Qwen 2.5 7B & MMLU-Pro & FP16 & 20 & 760.77 & 760.801 & 0.14 & 760.553 & 761.11 & 0.02 \\
+Qwen 2.5 7B & MMLU-Pro & Q4\_K\_M & 20 & 319.418 & 319.424 & 0.134 & 319.21 & 319.764 & 0.018 \\
+Qwen 2.5 7B & RACE-H & FP16 & 20 & 18.807 & 18.96 & 0.68 & 18.659 & 21.831 & 0.462 \\
+Qwen 2.5 7B & RACE-H & Q4\_K\_M & 20 & 14.405 & 14.418 & 0.067 & 14.331 & 14.639 & 0.004 \\
+\bottomrule
+\end{tabular}
+}
+\end{table*}
+
+\begin{table*}[t]
+\centering
+\small
+\caption{Descriptive statistics: throughput tokens s. SD and variance use ddof=1.}
+\label{tab:desc-throughput_tokens_s}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{llllllllll}
+\toprule
+Model & Benchmark & Precision & n & Median & Mean & SD & Min & Max & Variance \\
+\midrule
+Gemma 2 9B & MMLU & FP16 & 20 & 33.056 & 32.969 & 0.389 & 31.316 & 33.056 & 0.151 \\
+Gemma 2 9B & MMLU & Q4\_K\_M & 20 & 53.727 & 55.339 & 2.526 & 53.727 & 59.1 & 6.381 \\
+Gemma 2 9B & MMLU-Pro & FP16 & 20 & 42.819 & 42.823 & 0.019 & 42.819 & 42.903 & 0.000357 \\
+Gemma 2 9B & MMLU-Pro & Q4\_K\_M & 20 & 96.465 & 96.644 & 0.224 & 96.465 & 96.912 & 0.05 \\
+Gemma 2 9B & RACE-H & FP16 & 20 & 27.273 & 27.095 & 0.434 & 26.087 & 27.273 & 0.189 \\
+Gemma 2 9B & RACE-H & Q4\_K\_M & 20 & 40 & 39.5 & 1.026 & 37.5 & 40 & 1.053 \\
+Llama 3.1 8B & MMLU & FP16 & 20 & 43.842 & 43.623 & 0.675 & 41.65 & 43.842 & 0.455 \\
+Llama 3.1 8B & MMLU & Q4\_K\_M & 20 & 71.444 & 70.73 & 2.199 & 64.3 & 71.444 & 4.836 \\
+Llama 3.1 8B & MMLU-Pro & FP16 & 20 & 55.335 & 55.344 & 0.028 & 55.335 & 55.425 & 0.000764 \\
+Llama 3.1 8B & MMLU-Pro & Q4\_K\_M & 20 & 134.529 & 134.65 & 0.249 & 134.529 & 135.135 & 0.062 \\
+Llama 3.1 8B & RACE-H & FP16 & 20 & 31.25 & 31.066 & 0.566 & 29.412 & 31.25 & 0.32 \\
+Llama 3.1 8B & RACE-H & Q4\_K\_M & 20 & 45.455 & 44.886 & 1.388 & 41.667 & 45.455 & 1.926 \\
+Qwen 2.5 7B & MMLU & FP16 & 20 & 38.462 & 39.583 & 1.568 & 38.462 & 41.667 & 2.46 \\
+Qwen 2.5 7B & MMLU & Q4\_K\_M & 20 & 62.5 & 63.393 & 2.748 & 62.5 & 71.429 & 7.552 \\
+Qwen 2.5 7B & MMLU-Pro & FP16 & 20 & 58.484 & 58.515 & 0.039 & 58.484 & 58.561 & 0.002 \\
+Qwen 2.5 7B & MMLU-Pro & Q4\_K\_M & 20 & 141.009 & 140.965 & 0.137 & 140.565 & 141.009 & 0.019 \\
+Qwen 2.5 7B & RACE-H & FP16 & 20 & 32.292 & 32.292 & 1.069 & 31.25 & 33.333 & 1.142 \\
+Qwen 2.5 7B & RACE-H & Q4\_K\_M & 20 & 45.455 & 45.265 & 0.847 & 41.667 & 45.455 & 0.717 \\
+\bottomrule
+\end{tabular}
+}
+\end{table*}
+
+\begin{table*}[t]
+\centering
+\small
+\caption{Descriptive statistics: token limit rate. SD and variance use ddof=1.}
+\label{tab:desc-token_limit_rate}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{llllllllll}
+\toprule
+Model & Benchmark & Precision & n & Median & Mean & SD & Min & Max & Variance \\
+\midrule
+Gemma 2 9B & MMLU & FP16 & 20 & 0 & 0 & 0 & 0 & 0 & 0 \\
+Gemma 2 9B & MMLU & Q4\_K\_M & 20 & 0 & 0 & 0 & 0 & 0 & 0 \\
+Gemma 2 9B & MMLU-Pro & FP16 & 20 & 0 & 0 & 0 & 0 & 0 & 0 \\
+Gemma 2 9B & MMLU-Pro & Q4\_K\_M & 20 & 0 & 0 & 0 & 0 & 0 & 0 \\
+Gemma 2 9B & RACE-H & FP16 & 20 & 0 & 0 & 0 & 0 & 0 & 0 \\
+Gemma 2 9B & RACE-H & Q4\_K\_M & 20 & 0 & 0 & 0 & 0 & 0 & 0 \\
+Llama 3.1 8B & MMLU & FP16 & 20 & 0.3 & 0.3 & 5.7e-17 & 0.3 & 0.3 & 3.24e-33 \\
+Llama 3.1 8B & MMLU & Q4\_K\_M & 20 & 0.13 & 0.13 & 2.85e-17 & 0.13 & 0.13 & 8.11e-34 \\
+Llama 3.1 8B & MMLU-Pro & FP16 & 20 & 0.11 & 0.11 & 1.42e-17 & 0.11 & 0.11 & 2.03e-34 \\
+Llama 3.1 8B & MMLU-Pro & Q4\_K\_M & 20 & 0.06 & 0.06 & 1.42e-17 & 0.06 & 0.06 & 2.03e-34 \\
+Llama 3.1 8B & RACE-H & FP16 & 20 & 0 & 0 & 0 & 0 & 0 & 0 \\
+Llama 3.1 8B & RACE-H & Q4\_K\_M & 20 & 0 & 0 & 0 & 0 & 0 & 0 \\
+Qwen 2.5 7B & MMLU & FP16 & 20 & 0 & 0 & 0 & 0 & 0 & 0 \\
+Qwen 2.5 7B & MMLU & Q4\_K\_M & 20 & 0 & 0 & 0 & 0 & 0 & 0 \\
+Qwen 2.5 7B & MMLU-Pro & FP16 & 20 & 0.01 & 0.01 & 1.78e-18 & 0.01 & 0.01 & 3.17e-36 \\
+Qwen 2.5 7B & MMLU-Pro & Q4\_K\_M & 20 & 0.06 & 0.06 & 1.42e-17 & 0.06 & 0.06 & 2.03e-34 \\
+Qwen 2.5 7B & RACE-H & FP16 & 20 & 0 & 0 & 0 & 0 & 0 & 0 \\
+Qwen 2.5 7B & RACE-H & Q4\_K\_M & 20 & 0 & 0 & 0 & 0 & 0 & 0 \\
+\bottomrule
+\end{tabular}
+}
+\end{table*}
+
+\begin{table*}[t]
+\centering
+\small
+\caption{Descriptive statistics: total energy j. SD and variance use ddof=1.}
+\label{tab:desc-total_energy_j}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{llllllllll}
+\toprule
+Model & Benchmark & Precision & n & Median & Mean & SD & Min & Max & Variance \\
+\midrule
+Gemma 2 9B & MMLU & FP16 & 20 & 5722.691 & 5739.637 & 198.195 & 5396.815 & 6077.823 & 39281.106 \\
+Gemma 2 9B & MMLU & Q4\_K\_M & 20 & 3448.489 & 3437.64 & 102.063 & 3232.923 & 3642.589 & 10416.949 \\
+Gemma 2 9B & MMLU-Pro & FP16 & 20 & 164037.277 & 164100.739 & 313.421 & 163443.22 & 164739.058 & 98232.884 \\
+Gemma 2 9B & MMLU-Pro & Q4\_K\_M & 20 & 74417.791 & 74496.372 & 359.154 & 73912.243 & 75218.538 & 128991.633 \\
+Gemma 2 9B & RACE-H & FP16 & 20 & 7827.351 & 7490.394 & 1446.138 & 1393.284 & 8108.248 & 2091315.898 \\
+Gemma 2 9B & RACE-H & Q4\_K\_M & 20 & 5316.866 & 5347.205 & 155.539 & 5086.684 & 5649.08 & 24192.279 \\
+Llama 3.1 8B & MMLU & FP16 & 20 & 5799.507 & 5806.049 & 149.406 & 5588.126 & 6182.03 & 22322.287 \\
+Llama 3.1 8B & MMLU & Q4\_K\_M & 20 & 2956.685 & 2960.564 & 98.552 & 2798.456 & 3160.38 & 9712.41 \\
+Llama 3.1 8B & MMLU-Pro & FP16 & 20 & 194958.113 & 195011.516 & 719.772 & 193116.348 & 196047.955 & 518071.28 \\
+Llama 3.1 8B & MMLU-Pro & Q4\_K\_M & 20 & 80224.328 & 80123.76 & 409.577 & 79328.711 & 80700.799 & 167753.427 \\
+Llama 3.1 8B & RACE-H & FP16 & 20 & 5482.463 & 5489.345 & 149.175 & 5277.193 & 5846.896 & 22253.261 \\
+Llama 3.1 8B & RACE-H & Q4\_K\_M & 20 & 4119.404 & 4131.25 & 176.391 & 3788.02 & 4564.951 & 31113.824 \\
+Qwen 2.5 7B & MMLU & FP16 & 20 & 4043.269 & 4050.505 & 118.947 & 3841.939 & 4267.975 & 14148.398 \\
+Qwen 2.5 7B & MMLU & Q4\_K\_M & 20 & 2530.706 & 2529.102 & 102.526 & 2350.051 & 2688.419 & 10511.628 \\
+Qwen 2.5 7B & MMLU-Pro & FP16 & 20 & 251975.319 & 251885.768 & 703.557 & 250493.584 & 253081.487 & 494992.721 \\
+Qwen 2.5 7B & MMLU-Pro & Q4\_K\_M & 20 & 113017.001 & 113081.45 & 426.457 & 112255.464 & 114031.932 & 181865.813 \\
+Qwen 2.5 7B & RACE-H & FP16 & 20 & 5442.303 & 5444.672 & 117.302 & 5119.889 & 5614.637 & 13759.683 \\
+Qwen 2.5 7B & RACE-H & Q4\_K\_M & 20 & 3985.864 & 3978.029 & 109.994 & 3790.669 & 4159.148 & 12098.727 \\
+\bottomrule
+\end{tabular}
+}
+\end{table*}

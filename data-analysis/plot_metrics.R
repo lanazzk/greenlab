@@ -3,7 +3,7 @@ library(ggh4x)
 
 # Configuration
 CSV_FILE <- "experiments/llm_quantization_main_360_v3/run_table.csv"
-OUTPUT_DIR <- "."
+OUTPUT_DIR <- "data-analysis/report_figures"
 BENCHMARK_ORDER <- c("mmlu", "mmlu_pro", "race_h")
 BENCHMARK_NAMES <- c("mmlu" = "MMLU", "mmlu_pro" = "MMLU-Pro", "race_h" = "RACE-H")
 QUANTIZATION_ORDER <- c("fp16", "q4")
@@ -219,7 +219,7 @@ p_table <- ggplot(table_data, aes(x = field, y = row_id, label = display)) +
 save_plot(p_table, "06_metrics_table.png", width = 20, height = 10)
 
 # 4-5. Utilization and temperature from the 100 ms summary file.
-SUMMARY_FILE <- "sampler_100ms_summary.csv"
+SUMMARY_FILE <- "data-analysis/data/sampler_100ms_summary.csv"
 if (!file.exists(SUMMARY_FILE)) stop("Missing sampler summary: ", SUMMARY_FILE)
 sampler_summary <- read_csv(SUMMARY_FILE, show_col_types = FALSE) %>%
   mutate(

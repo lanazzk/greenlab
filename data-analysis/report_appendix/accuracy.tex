@@ -1,0 +1,47 @@
+\begin{table*}[t]
+\centering
+\small
+\caption{Paired correctness counts; 100 questions per block.}
+\label{tab:accuracy-counts}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{llllll}
+\toprule
+Model & Benchmark & Both correct & FP16 only & Q4 only & Both incorrect \\
+\midrule
+Llama 3.1 8B & MMLU & 45 & 7 & 12 & 36 \\
+Llama 3.1 8B & MMLU-Pro & 38 & 5 & 10 & 47 \\
+Llama 3.1 8B & RACE-H & 84 & 2 & 2 & 12 \\
+Qwen 2.5 7B & MMLU & 61 & 5 & 0 & 34 \\
+Qwen 2.5 7B & MMLU-Pro & 47 & 5 & 6 & 42 \\
+Qwen 2.5 7B & RACE-H & 89 & 0 & 1 & 10 \\
+Gemma 2 9B & MMLU & 63 & 3 & 2 & 32 \\
+Gemma 2 9B & MMLU-Pro & 44 & 5 & 5 & 46 \\
+Gemma 2 9B & RACE-H & 91 & 0 & 2 & 7 \\
+\bottomrule
+\end{tabular}
+}
+\end{table*}
+
+\begin{table*}[t]
+\centering
+\small
+\caption{Paired accuracy change, pointwise 95\% bootstrap CI and exact McNemar p-values.}
+\label{tab:accuracy-effects}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{lllllllll}
+\toprule
+Model & Benchmark & FP16 (\%) & Q4 (\%) & Change (pp) & CI low & CI high & Raw p & BH p \\
+\midrule
+Llama 3.1 8B & MMLU & 52 & 57 & 5 & -3 & 14 & 0.359 & 1 \\
+Llama 3.1 8B & MMLU-Pro & 43 & 48 & 5 & -2 & 12 & 0.302 & 1 \\
+Llama 3.1 8B & RACE-H & 86 & 86 & 0 & -4 & 4 & 1 & 1 \\
+Qwen 2.5 7B & MMLU & 66 & 61 & -5 & -10 & -1 & 0.062 & 0.562 \\
+Qwen 2.5 7B & MMLU-Pro & 52 & 53 & 1 & -5 & 7 & 1 & 1 \\
+Qwen 2.5 7B & RACE-H & 89 & 90 & 1 & 0 & 3 & 1 & 1 \\
+Gemma 2 9B & MMLU & 66 & 65 & -1 & -5 & 3 & 1 & 1 \\
+Gemma 2 9B & MMLU-Pro & 49 & 49 & 0 & -6 & 6 & 1 & 1 \\
+Gemma 2 9B & RACE-H & 91 & 93 & 2 & 0 & 5 & 0.5 & 1 \\
+\bottomrule
+\end{tabular}
+}
+\end{table*}

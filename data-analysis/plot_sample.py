@@ -1,9 +1,9 @@
 """Aggregate raw system sampler data into 100 ms summaries.
 
 The script reads every ``system_samples.csv`` below the experiment directory.
-It writes files to the current directory by default:
+It writes to data-analysis/data/ by default (run from the repository root):
 
-    python3 plot_sample.py
+    python3 data-analysis/plot_sample.py
 
 Outputs:
     sampler_100ms_summary.csv      mean/min/max/std per model/benchmark/quantization/bin
@@ -73,7 +73,7 @@ def main() -> None:
         default=Path("experiments/llm_quantization_main_360_v3"),
         help="Directory containing run folders and system_samples.csv files.",
     )
-    parser.add_argument("--output-dir", type=Path, default=Path("."))
+    parser.add_argument("--output-dir", type=Path, default=Path("data-analysis/data"))
     parser.add_argument("--bin-ms", type=int, default=100)
     args = parser.parse_args()
     if args.bin_ms <= 0:
