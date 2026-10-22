@@ -343,7 +343,9 @@ for (m in c(RQ1_METRICS, RQ2_METRICS)) {
     labs(x = NULL, y = METRIC_LABELS[[m]], fill = NULL,
          caption = "20 runs per configuration. Boxes: median and IQR; points: individual runs. Y-axes differ per panel.") +
     theme_bw(base_size = 11) + theme(legend.position = "none")
-  ggsave(file.path(FIG_DIR, paste0("distribution_", m, ".png")), p, width = 9, height = 7, dpi = 200)
+  for (ext in c("png", "pdf")) {
+    ggsave(file.path(FIG_DIR, paste0("distribution_", m, ".", ext)), p, width = 9, height = 7, dpi = 200)
+  }
 }
 
 p_acc <- accuracy %>%
@@ -356,7 +358,74 @@ p_acc <- accuracy %>%
   labs(x = "Q4 - FP16 accuracy change (percentage points)", y = NULL,
        caption = "Paired bootstrap 95% CIs (20,000 resamples, pointwise). Significance: BH-adjusted exact McNemar.") +
   theme_bw(base_size = 11)
-ggsave(file.path(FIG_DIR, "accuracy_change_ci.png"), p_acc, width = 8, height = 5, dpi = 200)
+for (ext in c("png", "pdf")) {
+  ggsave(file.path(FIG_DIR, paste0("accuracy_change_ci.", ext)), p_acc, width = 8, height = 5, dpi = 200)
+}
+
+# Q-Q plots behind the Shapiro-Wilk checks (one page per metric)
+qq_dir <- file.path(FIG_DIR, "qq")
+dir.create(qq_dir, showWarnings = FALSE)
+for (m in c(RQ1_METRICS, RQ2_METRICS)) {
+  p_qq <- ggplot(runs, aes(sample = .data[[m]], colour = prec_label)) +
+    stat_qq(size = 0.8) + stat_qq_line() +
+    facet_wrap(bench_label ~ model_label, scales = "free", ncol = 3) +
+    scale_colour_manual(values = c("FP16" = "#2E86C1", "Q4_K_M" = "#E67E22")) +
+    labs(x = "Theoretical quantiles", y = METRIC_LABELS[[m]], colour = NULL) +
+    theme_bw(base_size = 10) + theme(legend.position = "bottom")
+  ggsave(file.path(qq_dir, paste0("qq_", m, ".png")), p_qq, width = 9, height = 7, dpi = 150)
+}
+
+# -----------------------------------------------------------------------------
+# 9. LaTeX descriptive tables used in the Results section
+# -----------------------------------------------------------------------------
+latex_desc_table <- function(metrics, scales, units, digits, label, caption) {
+  fmt <- function(x, d) formatC(x, format = "f", digits = d)
+  wide <- lapply(seq_along(metrics), function(i) {
+    descriptives %>% filter(metric == metrics[i]) %>%
+      mutate(across(c(median, mean, sd, min, max), ~ .x / scales[i]),
+             variance = variance / scales[i]^2) %>%
+      transmute(model_label, bench_label, prec_label,
+                cells = paste(fmt(median, digits[i]), fmt(mean, digits[i]), fmt(sd, digits[i]),
+                              fmt(min, digits[i]), fmt(max, digits[i]), fmt(variance, digits[i]),
+                              sep = " & "))
+  })
+  rows <- wide[[1]] %>% rename(c1 = cells) %>%
+    left_join(wide[[2]] %>% rename(c2 = cells), by = c("model_label", "bench_label", "prec_label")) %>%
+    arrange(model_label, bench_label, prec_label)
+  body <- character()
+  for (i in seq_len(nrow(rows))) {
+    r <- rows[i, ]
+    first_model <- i == 1 || rows$model_label[i] != rows$model_label[i - 1]
+    if (first_model && i > 1) body <- c(body, "\\midrule")
+    model <- if (first_model) as.character(r$model_label) else ""
+    bench <- if (r$prec_label == "FP16") as.character(r$bench_label) else ""
+    prec <- gsub("_", "\\_", as.character(r$prec_label), fixed = TRUE)
+    body <- c(body, paste0(model, " & ", bench, " & ", prec, " & ", r$c1, " & ", r$c2, " \\\\"))
+  }
+  c("\\begin{table*}[t]", "\\centering", "\\small",
+    paste0("\\caption{", caption, "}"), paste0("\\label{", label, "}"),
+    "\\resizebox{\\textwidth}{!}{%", "\\begin{tabular}{lllrrrrrrrrrrrr}", "\\toprule",
+    paste0(" & & & \\multicolumn{6}{c}{", units[1], "} & \\multicolumn{6}{c}{", units[2], "} \\\\"),
+    "\\cmidrule(lr){4-9}\\cmidrule(lr){10-15}",
+    "Model & Benchmark & Precision & Median & Mean & SD & Min & Max & Var & Median & Mean & SD & Min & Max & Var \\\\",
+    "\\midrule", body, "\\bottomrule", "\\end{tabular}", "}", "\\end{table*}")
+}
+latex_tables <- list(
+  rq1 = latex_desc_table(RQ1_METRICS, c(1000, 1), c("Total energy (kJ)", "Average power (W)"), c(2, 1),
+                         "tab:results-desc-rq1", "Descriptive statistics of total energy (kJ) and average power (W) per configuration, $n=20$ runs each."),
+  rq2_time = latex_desc_table(c("inference_time_s", "throughput_tokens_s"), c(1, 1),
+                              c("Evaluation duration (s)", "Output throughput (tokens/s)"), c(2, 2),
+                              "tab:results-desc-rq2-time", "Descriptive statistics of evaluation duration (s) and output throughput (tokens/s) per configuration, $n=20$ runs each."),
+  rq2_util = latex_desc_table(c("cpu_utilization_pct", "gpu_utilization_pct"), c(1, 1),
+                              c("CPU utilization (\\%)", "GPU utilization (\\%)"), c(2, 2),
+                              "tab:results-desc-rq2-util", "Descriptive statistics of mean CPU and GPU utilization (\\%) per configuration, $n=20$ runs each."),
+  rq2_mem = latex_desc_table(c("peak_ram_mb", "peak_gpu_memory_mb"), c(1, 1),
+                             c("Peak host RAM (MB)", "Peak GPU memory (MB)"), c(0, 0),
+                             "tab:results-desc-rq2-mem", "Descriptive statistics of peak host RAM and peak GPU memory (MB) per configuration, $n=20$ runs each.")
+)
+latex_dir <- file.path(TAB_DIR, "latex")
+dir.create(latex_dir, showWarnings = FALSE)
+for (n in names(latex_tables)) writeLines(latex_tables[[n]], file.path(latex_dir, paste0("descriptive_", n, ".tex")))
 
 writeLines(summary_lines, file.path(OUT_DIR, "summary.txt"))
 cat("\nDone. Tables in", TAB_DIR, "- figures in", FIG_DIR, "\n")
