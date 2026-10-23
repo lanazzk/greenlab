@@ -9,7 +9,7 @@ Loading dataset ehovy/race from Hugging Face...
                              found on the Hugging Face Hub                      
                     WARNING  Found the latest cached dataset         cache.py:95
                              configuration 'high' at                            
-                             /home/gl_team5/.cache/huggingface/datas            
+                             ~/.cache/huggingface/datas            
                              ets/ehovy___race/high/0.0.0/2fec9fd81f1            
                              dc971569a9b729c43f2f0e6436637 (last                
                              modified on Sun Sep 27 06:45:25 2026).             

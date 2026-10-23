@@ -5,7 +5,7 @@ Loading dataset TIGER-Lab/MMLU-Pro from Hugging Face...
                              Hub                                                
                     WARNING  Found the latest cached dataset         cache.py:95
                              configuration 'default' at                         
-                             /home/gl_team5/.cache/huggingface/datas            
+                             ~/.cache/huggingface/datas            
                              ets/TIGER-Lab___mmlu-pro/default/0.0.0/            
                              527feea0afed1de15a8c115abf7be4c91212331            
                              5 (last modified on Thu Sep 24 18:48:08            

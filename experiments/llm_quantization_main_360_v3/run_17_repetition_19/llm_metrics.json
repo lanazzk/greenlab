@@ -28,7 +28,7 @@
     "--max-retries",
     "0",
     "--log-dir",
-    "/home/gl_team5/greenlabproject/experiments/llm_quantization_main_360_v3/run_17_repetition_19/inspect_logs",
+    "experiments/llm_quantization_main_360_v3/run_17_repetition_19/inspect_logs",
     "-T",
     "shuffle=false"
   ],
@@ -38,7 +38,7 @@
   "input_tokens": 52117.0,
   "output_tokens": 500.0,
   "throughput_tokens_s": 31.25,
-  "eval_log": "/home/gl_team5/greenlabproject/experiments/llm_quantization_main_360_v3/run_17_repetition_19/inspect_logs/2026-10-18T18-36-45-00-00_race-h_cRfuQHptoBECMyVHdzjhtu.eval",
+  "eval_log": "experiments/llm_quantization_main_360_v3/run_17_repetition_19/inspect_logs/2026-10-18T18-36-45-00-00_race-h_cRfuQHptoBECMyVHdzjhtu.eval",
   "accuracy": 86.0,
   "token_limit_rate": 0.0
 }
